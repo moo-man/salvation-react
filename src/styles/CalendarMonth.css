@@ -1,0 +1,19 @@
+.CalendarMonth {
+    flex: 1
+}
+
+.week 
+{
+    display: flex;
+    width: 100%;
+}
+
+.week:last-of-type > .day
+{
+    border-bottom: 1px solid black;
+}
+
+.week:first-of-type > .day
+{
+    border-top: 1px solid black
+}

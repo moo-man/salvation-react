@@ -1,24 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './styles/App.css';
+import {
+  BrowserRouter as Router,
+  Link
+} from "react-router-dom"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="Salvation">
+      <header className="Salvation-header">
+        <h2>The Hand Of Fate</h2>
       </header>
+      <div className="salvation-menu">
+        <div className="menu-image">
+          <a href="https://world.hof.cards">
+            <img src="./images/the-world.jpg" alt="Login to Foundry" />
+          </a>
+        </div>
+        <div className="menu-image">
+          <Link to="/calendar">
+          <img src="./images/wheel-of-fortune.jpg" alt="Access Calendar" />
+          </Link>
+        </div>
+      </div>
+      <div className="salvation-menu">
+        <div className="menu-image">
+          <img src="./images/the-emperor.jpg" alt="Authorize" />
+        </div>
+      </div>
     </div>
   );
 }
