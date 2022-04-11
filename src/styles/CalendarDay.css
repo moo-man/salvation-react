@@ -10,3 +10,8 @@
 {
     border-left: 1px solid black
 }
+
+
+.day.current {
+    box-shadow: inset 0px 0px 10px #6a070a;
+}

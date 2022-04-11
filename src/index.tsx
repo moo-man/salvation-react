@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {createRoot} from "react-dom/client";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Calendar, { CalendarData } from './routes/Calendar';
+import CalendarView, { CalendarData } from './routes/CalendarView';
 
 
 let testData : CalendarData = {
@@ -22,7 +22,8 @@ let testData : CalendarData = {
     name : "Earth",
     day : 12,
     month: 2,
-    year : 1422
+    year : 1422,
+    date : `February 12, 1422`
   }
 }
 
@@ -37,7 +38,7 @@ if (container)
       <BrowserRouter>
       <Routes>
         <Route path="/" element={<App/>}/>
-        <Route path="/calendar" element={<Calendar data={testData}/>}/>
+        <Route path="/calendar" element={<CalendarView data={testData}/>}/>
       </Routes>
       </BrowserRouter>
     </React.StrictMode>

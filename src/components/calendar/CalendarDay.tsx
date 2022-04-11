@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { MouseEventHandler } from 'react';
 import "../../styles/CalendarDay.css"
 
-export function CalendarDay() {
-  return <div className="day"></div>
+interface CalendarDayProps {
+  current: boolean,
+  onClick: (event: React.MouseEvent) => void,
+  day : number
+}
+
+export function CalendarDay(props : CalendarDayProps) {
+  return <div onClick={props.onClick} className={`day ${props.current ? "current" : ""}`} >{props.day}</div>
 }

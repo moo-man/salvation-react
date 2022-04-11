@@ -1,5 +1,5 @@
 import React from 'react';
-import { CalendarData } from '../../routes/Calendar';
+import { CalendarData } from '../../routes/CalendarView';
 import "../../styles/CalendarYear.css"
 import { CalendarMonth } from './CalendarMonth';
 
@@ -27,7 +27,7 @@ export class CalendarYear extends React.Component<CalendarYearProps, CalendarYea
 
 
       this.props.data.daysInMonth.forEach((monthDays, i) => {
-        monthViews.push(<CalendarMonth key={`${i},${this.props.year}`} data={{daysInMonth : monthDays, daysInWeek : this.props.data.daysInWeek}}></CalendarMonth>)
+        monthViews.push(<CalendarMonth changeDay={(day: Number) => {}} key={`${i},${this.props.year}`} data={{daysInMonth : monthDays, daysInWeek : this.props.data.daysInWeek}}></CalendarMonth>)
       })
 
       return <div className='CalendarYear'>{monthViews.reduce((prev, current) => <>{prev}{current}</>)}</div>

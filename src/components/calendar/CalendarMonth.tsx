@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { MouseEventHandler } from 'react';
 import { CalendarDay } from './CalendarDay';
 import "../../styles/CalendarMonth.css"
+import { CalendarState } from '../../routes/CalendarView';
 
 interface CalendarMonthProps {
   data : CalendarMonthData,
-  day? : number | null
+  day? : number | null,
+  changeDay : (day: number) => void
 }
 
 export interface CalendarMonthData {
@@ -36,7 +38,11 @@ export class CalendarMonth extends React.Component<CalendarMonthProps, CalendarM
 
       for(let dayNum = 0 ; dayNum < daysInWeek; dayNum++)
       {
-        dayArray.push(<CalendarDay key={(i * daysInWeek) + dayNum}></CalendarDay>) // Have to do this to get unique keys
+        let dayInMonth = (i * daysInWeek) + dayNum + 1
+        let current = false;
+        if (dayInMonth === this.props.day)
+          current = true;
+        dayArray.push(<CalendarDay onClick={this.handleDayClick.bind(this)} key={dayInMonth} day={dayInMonth} current={current}></CalendarDay>) // Have to do this to get unique keys
       }
       
       html.push(
@@ -46,5 +52,10 @@ export class CalendarMonth extends React.Component<CalendarMonthProps, CalendarM
 
     }
     return <div className="CalendarMonth">{html.reduce((prev : JSX.Element, current : JSX.Element) : JSX.Element => <>{prev}{current}</>)}</div>;
+  }
+
+  handleDayClick(event : React.MouseEvent) : void {
+    if (event.currentTarget.textContent)
+      this.props.changeDay(parseInt(event.currentTarget.textContent))
   }
 }
