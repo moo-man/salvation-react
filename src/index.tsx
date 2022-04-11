@@ -1,32 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './styles/index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {createRoot} from "react-dom/client";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import CalendarView, { CalendarData } from './routes/CalendarView';
+import CalendarView from './routes/CalendarView';
+import { TestCalendarController } from './controllers/TestCalendarController';
 
 
-let testData : CalendarData = {
-
-  monthsInYear :  12,
-  daysInYear : 365,
-  daysInMonth : [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
-  daysInWeek : 7,
-  leapYear : {
-    month : 2,
-    recurrence : 4
-  },
-  state : {  
-    name : "Earth",
-    day : 12,
-    month: 2,
-    year : 1422,
-    date : `February 12, 1422`
-  }
-}
-
+let controller = new TestCalendarController()
 
 const container = document.getElementById("root")
 let root
@@ -38,7 +20,7 @@ if (container)
       <BrowserRouter>
       <Routes>
         <Route path="/" element={<App/>}/>
-        <Route path="/calendar" element={<CalendarView data={testData}/>}/>
+        <Route path="/calendar" element={<CalendarView controller={controller}/>}/>
       </Routes>
       </BrowserRouter>
     </React.StrictMode>
