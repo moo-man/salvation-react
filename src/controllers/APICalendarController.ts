@@ -4,13 +4,22 @@ import { AbstractCalendarController } from "./AbstractCalendarController";
 
 export class APICalendarController extends AbstractCalendarController
 {
-    getData(): Promise<CalendarData> {
+    getMonthData(month: number): CalendarMonthData {
         throw new Error("Method not implemented.");
     }
-    setDate(date: Date): Promise<CalendarState> {
+    changeDateBy(date: Date): CalendarState {
         throw new Error("Method not implemented.");
     }
-    getDate(): Promise<CalendarState> {
+    fetchData(): Promise<void> {
+        throw new Error("Method not implemented.");
+    }
+    getCalendarData(): CalendarData {
+        throw new Error("Method not implemented.");
+    }
+    setDate(date: Date): CalendarState {
+        throw new Error("Method not implemented.");
+    }
+    getCalendarState(): CalendarState {
         throw new Error("Method not implemented.");
     }
     getCurrentMonthData(): CalendarMonthData {

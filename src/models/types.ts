@@ -15,8 +15,9 @@ export interface CalendarState {
 
   export interface CalendarData {
 
-    monthsInYear :  number
-    daysInYear : number
+    monthsInYear :  number,
+    monthNames : string[],
+    daysInYear : number,
     daysInMonth : number[]
     daysInWeek : number,
     leapYear : {
@@ -27,11 +28,15 @@ export interface CalendarState {
   }
 
   export interface CalendarMonthData {
+    name : string,
+    number : number,
     daysInMonth : number,
     daysInWeek : number
   }
-  
-  export interface CalendarMonthState {
-    day? : number | null
+
+
+  export interface CalendarOperations {
+    changeDay(day: number) : void
+    changeMonth(number: number) : void
   }
   

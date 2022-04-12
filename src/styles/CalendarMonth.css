@@ -1,19 +1,40 @@
 .CalendarMonth {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.week 
+.CalendarMonth header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.CalendarMonth header > *{
+    margin: 5px
+}
+
+
+.CalendarMonth header h3{
+    text-align: center;
+    display:flex
+}
+
+
+.CalendarMonth .week 
 {
     display: flex;
     width: 100%;
 }
 
-.week:last-of-type > .day
+.CalendarMonth .week:last-of-type > .day
 {
     border-bottom: 1px solid black;
 }
 
-.week:first-of-type > .day
+.CalendarMonth .week:first-of-type > .day
 {
     border-top: 1px solid black
 }

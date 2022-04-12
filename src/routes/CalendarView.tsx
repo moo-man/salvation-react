@@ -1,51 +1,55 @@
-import React from "react";
-import "../styles/Calendar.css"
-import { CalendarHeader } from "../components/calendar/CalendarHeader";
-import { CalendarState } from "../models/types";
-import { AbstractCalendarController } from "../controllers/AbstractCalendarController";
-import { CalendarMonth } from "../components/calendar/CalendarMonth";
-import { CalendarYear } from "../components/calendar/CalendarYear";
+import React from 'react';
+import '../styles/Calendar.css';
+import { CalendarHeader } from '../components/calendar/CalendarHeader';
+import { CalendarState } from '../models/types';
+import { AbstractCalendarController } from '../controllers/AbstractCalendarController';
+import { CalendarMonth } from '../components/calendar/CalendarMonth';
+import { CalendarYear } from '../components/calendar/CalendarYear';
 
-
-interface CalendarProps {
-  controller : AbstractCalendarController
+interface CalendarViewProps {
+  controller: AbstractCalendarController;
 }
 
-
-
-class CalendarView extends React.Component<CalendarProps, CalendarState> {
-
+class CalendarView extends React.Component<CalendarViewProps, CalendarState> {
   componentDidMount() {
-    this.controller.getDate().then(date => {
-      this.setState(date);
-    })
+    this.controller.fetchData().then(() => {
+      this.setState(this.controller.getCalendarState());
+    });
   }
 
-  render() : JSX.Element {
-    if (!this.state)
-    {
-      return <div></div>
+  render(): JSX.Element {
+    if (!this.state) {
+      return <div></div>;
     }
-
-    console.log("test")
-    return <div className="Calendar">
-      <CalendarHeader name={this.state.name} date={this.state.date}></CalendarHeader>
-      <CalendarMonth data={this.controller.getCurrentMonthData()} day={this.state.day} changeDay={this.changeDay.bind(this)}></CalendarMonth>
-      {/* <CalendarYear data={this.controller.getData()} year={this.state.year}></CalendarYear> */}
-    </div>
+    return (
+      <div className="Calendar">
+        <CalendarHeader name={this.state.name}></CalendarHeader>
+        <CalendarYear data={this.controller.getCalendarData()} state={this.state} getMonthData={this.controller.getMonthData.bind(this.controller)}></CalendarYear>
+        <CalendarMonth
+          data={this.controller.getCurrentMonthData()}
+          state={this.state}
+          mode={'month'}
+          operations={{
+            changeDay: this.changeDay,
+            changeMonth: this.changeMonth,
+          }}
+        ></CalendarMonth>
+      </div>
+    );
   }
 
-
-  async changeDay(day : number)
-  {
-     // Extract this into generic controller?
-    this.setState(await this.controller.setDate({day}));
+  changeDay = async (day: number) => {
+    // Extract this into generic controller?
+    this.setState(await this.controller.setDate({ day }));
   }
 
-  get controller() : AbstractCalendarController {
-    return this.props.controller
+  changeMonth = async (number: number) => {
+    this.setState(await this.controller.changeDateBy({ month: number }));
   }
 
+  get controller(): AbstractCalendarController {
+    return this.props.controller;
+  }
 }
 
 export default CalendarView;
