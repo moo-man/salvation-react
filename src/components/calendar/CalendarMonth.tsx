@@ -6,16 +6,22 @@ import {
   CalendarOperations,
   CalendarState,
 } from '../../models/types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { InterCalDay } from './InterCalDay';
 
 interface CalendarMonthProps {
   data: CalendarMonthData;
   state: CalendarState;
   mode: string;
   operations: CalendarOperations;
+  active?: boolean
+  onClick?: (event: React.MouseEvent) => void,
 }
 
 export class CalendarMonth extends React.Component<CalendarMonthProps> {
   render(): JSX.Element {
+
     let weekNum = Math.ceil(
       this.props.data.daysInMonth / this.props.data.daysInWeek
     );
@@ -60,12 +66,13 @@ export class CalendarMonth extends React.Component<CalendarMonthProps> {
         </div>
       );
     }
+    let className = `CalendarMonth ${this.props.active ? "active" : ""}`
     return (
-      <div className="CalendarMonth">
+      <div className={className} onClick={this.props.onClick} data-month={this.props.data.number}>
         <header>
           {this.props.mode === 'month' ? (
             <button data-value="-1" onClick={this.handleMonthClick.bind(this)}>
-              &lt;
+              <FontAwesomeIcon icon={faChevronLeft} />
             </button>
           ) : (
             <></>
@@ -73,7 +80,7 @@ export class CalendarMonth extends React.Component<CalendarMonthProps> {
           <h3>{this.props.data.name}</h3>
           {this.props.mode === 'month' ? (
             <button data-value="1" onClick={this.handleMonthClick.bind(this)}>
-              &gt;
+              <FontAwesomeIcon icon={faChevronRight} />
             </button>
           ) : (
             <></>
@@ -89,6 +96,9 @@ export class CalendarMonth extends React.Component<CalendarMonthProps> {
             )
           )}
         </div>
+        {this.props.data.intercal && 
+        <InterCalDay handleClick={this.handleDayClick.bind(this)} parent={this.props.data} state={this.props.state} data={this.props.data.intercal}></InterCalDay>
+        }
       </div>
     );
   }

@@ -5,11 +5,15 @@ import { CalendarMonth } from './CalendarMonth';
 
 interface CalendarYearProps {
   data: CalendarData;
-  state: CalendarState;
+  state: CalendarYearState;
   getMonthData: (month: number) => CalendarMonthData
 }
 
-export class CalendarYear extends React.Component<CalendarYearProps,CalendarState> {
+interface CalendarYearState extends CalendarState {
+  activeMonth? : number
+}
+
+export class CalendarYear extends React.Component<CalendarYearProps,CalendarYearState> {
 
   constructor(props: CalendarYearProps)
   {
@@ -21,11 +25,13 @@ export class CalendarYear extends React.Component<CalendarYearProps,CalendarStat
     let monthViews: JSX.Element[] = [];
     if (this.state)
     {
-      this.props.data.daysInMonth.forEach((monthDays: number, i: number) => {
+      this.props.data.calendar.daysInMonth.forEach((monthDays: number, i: number) => {
         if (this.state && monthDays > 0)
         {
           monthViews.push(
             <CalendarMonth
+              onClick={this.handleMonthClick.bind(this)}
+              active={this.state.activeMonth === i}
               mode={"year"}
               key={`${i},${this.props.state.year}`}
               state={this.props.state}
@@ -48,5 +54,20 @@ export class CalendarYear extends React.Component<CalendarYearProps,CalendarStat
         {monthViews.reduce((prev : JSX.Element, current : JSX.Element) : JSX.Element => (<>{prev}{current}</>))}
       </div>
     );
+  }
+
+  handleMonthClick(event : React.MouseEvent): void
+  {
+    let month = event.currentTarget.getAttribute("data-month")
+    if (event.currentTarget.classList.contains("active"))
+    {
+      this.setState({activeMonth : undefined})
+      return
+    }
+    
+    if (month)
+    {
+      this.setState({activeMonth : parseInt(month)})
+    }
   }
 }

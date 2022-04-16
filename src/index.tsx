@@ -5,10 +5,10 @@ import reportWebVitals from './reportWebVitals';
 import {createRoot} from "react-dom/client";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import CalendarView from './routes/CalendarView';
-import { TestCalendarController } from './controllers/TestCalendarController';
+import { TestHarptosCalendar } from './controllers/TestHarptosCalendarController';
 
 
-let controller = new TestCalendarController()
+let controller = new TestHarptosCalendar()
 
 const container = document.getElementById("root")
 let root

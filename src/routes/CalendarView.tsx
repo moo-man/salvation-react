@@ -5,15 +5,19 @@ import { CalendarState } from '../models/types';
 import { AbstractCalendarController } from '../controllers/AbstractCalendarController';
 import { CalendarMonth } from '../components/calendar/CalendarMonth';
 import { CalendarYear } from '../components/calendar/CalendarYear';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCalendarDay } from '@fortawesome/free-solid-svg-icons';
 
 interface CalendarViewProps {
   controller: AbstractCalendarController;
 }
 
 class CalendarView extends React.Component<CalendarViewProps, CalendarState> {
+
   componentDidMount() {
     this.controller.fetchData().then(() => {
       this.setState(this.controller.getCalendarState());
+      this.setState({viewMode : "month"})
     });
   }
 
@@ -21,19 +25,21 @@ class CalendarView extends React.Component<CalendarViewProps, CalendarState> {
     if (!this.state) {
       return <div></div>;
     }
+    let calendarData = this.controller.getCalendarData()
     return (
       <div className="Calendar">
-        <CalendarHeader name={this.state.name}></CalendarHeader>
-        <CalendarYear data={this.controller.getCalendarData()} state={this.state} getMonthData={this.controller.getMonthData.bind(this.controller)}></CalendarYear>
-        <CalendarMonth
+        <button onClick={this.toggleView.bind(this)}><FontAwesomeIcon icon={faCalendarDay}/></button>
+        <CalendarHeader name={calendarData.calendar.name}></CalendarHeader>
+        {this.state.viewMode === "month" ? <CalendarMonth 
           data={this.controller.getCurrentMonthData()}
           state={this.state}
           mode={'month'}
           operations={{
             changeDay: this.changeDay,
             changeMonth: this.changeMonth,
-          }}
-        ></CalendarMonth>
+          }}></CalendarMonth> 
+          : <CalendarYear data={calendarData} state={this.state} getMonthData={this.controller.getMonthData.bind(this.controller)}></CalendarYear>}
+
       </div>
     );
   }
@@ -45,6 +51,16 @@ class CalendarView extends React.Component<CalendarViewProps, CalendarState> {
 
   changeMonth = async (number: number) => {
     this.setState(await this.controller.changeDateBy({ month: number }));
+  }
+
+  switchViewTo(view : string)
+  {
+    this.setState({viewMode : view})
+  }
+
+  toggleView()
+  {
+    this.setState({viewMode : this.state.viewMode === "month" ? "year" : "month"})
   }
 
   get controller(): AbstractCalendarController {

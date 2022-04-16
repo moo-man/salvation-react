@@ -4,6 +4,7 @@
     border-top: none;
     height: 100px;
     width: 100px;
+    padding: 3px;
 }
 
 .day:first-of-type
