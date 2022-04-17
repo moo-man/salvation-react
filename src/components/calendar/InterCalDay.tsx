@@ -6,17 +6,18 @@ interface InterCalProps {
   data : InterCalData
   parent : CalendarMonthData
   state : CalendarState,
-  handleClick : (event: React.MouseEvent) => void
+  onClick : (day: number) => void
 }
 
 export class InterCalDay extends React.Component<InterCalProps> {
   render(): JSX.Element {
 
     let day = <CalendarDay
-            onClick={this.props.handleClick}
+            onClick={this.props.onClick.bind(this)}
             key={this.props.parent.daysInMonth + 1}
             day={this.props.parent.daysInMonth + 1}
-            current={this.props.state.month === this.props.parent.number && this.props.state.day === this.props.parent.daysInMonth + 1}
+            active={this.props.state.month === this.props.parent.number && this.props.state.day === this.props.parent.daysInMonth + 1}
+            notes={[]}
           ></CalendarDay>
 
     return (
@@ -29,5 +30,9 @@ export class InterCalDay extends React.Component<InterCalProps> {
         </div>
       </div>
     );
+  }
+
+  onClick(ev : React.MouseEvent): void {
+    this.props.onClick(this.props.parent.daysInMonth)
   }
 }

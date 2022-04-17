@@ -4,10 +4,12 @@ import {
   CalendarMonthData,
   CalendarState,
   Date,
+  InterCalData,
 } from '../models/types';
 import { AbstractCalendarController } from './AbstractCalendarController';
 
 export class TestEarthCalendarController extends AbstractCalendarController {
+
   protected model: Calendar | null = null;
 
   constructor() {
@@ -93,28 +95,25 @@ export class TestEarthCalendarController extends AbstractCalendarController {
     } else throw Error('No Calendar Model');
   }
 
+
   getCurrentMonthData(): CalendarMonthData {
     if (this.model) {
-      return {
-        daysInMonth: this.model.data.calendar.daysInMonth[this.model.state.month],
-        daysInWeek: this.model.data.calendar.daysInWeek,
-        name: this.model.data.calendar.monthNames[this.model.state.month],
-        number: this.model.state.month,
-      };
+      return this.getMonthData(this.model.state.month);
     } else throw Error('No Calendar Model');
   }
 
-  getMonthData(month : number): CalendarMonthData {
+  getMonthData(month: number): CalendarMonthData {
     if (this.model) {
       return {
         daysInMonth: this.model.data.calendar.daysInMonth[month],
         daysInWeek: this.model.data.calendar.daysInWeek,
         name: this.model.data.calendar.monthNames[month],
         number: month,
+        intercal: this.getIntercalData(month) || undefined,
+        notes : {}
       };
     } else throw Error('No Calendar Model');
   }
-
 
   checkStateChange(): void {
     if (this.model) {
@@ -145,10 +144,11 @@ export class TestEarthCalendarController extends AbstractCalendarController {
         state.month = data.calendar.monthsInYear;
         state.year--;
       }
-
-
-
     }
     
+  }
+
+  getIntercalData(month: number): void | InterCalData {
+    return
   }
 }

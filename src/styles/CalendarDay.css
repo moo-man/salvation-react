@@ -13,6 +13,6 @@
 }
 
 
-.day.current {
+.day.active {
     box-shadow: inset 0px 0px 10px #6a070a;
 }

@@ -1,0 +1,1953 @@
+{
+    "CampaignList": [
+        {
+            "notes": [
+                {
+                    "DisplayString": null,
+                    "Date": "08231486",
+                    "NoteContent": "Princes of the Apocalypse began!",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "08291486",
+                    "NoteContent": "Found Clank!",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "09031486",
+                    "NoteContent": "Randir and Bronson join the party",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "09041486",
+                    "NoteContent": "Bronson slays the Urmber Hulk (single-handedly)",
+                    "Importance": 0
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "09091486",
+                    "NoteContent": "Ohm left the party and went to Rivergard Keep",
+                    "Importance": 0
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "09101486",
+                    "NoteContent": "Father Aurum joins the party",
+                    "Importance": 0
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "09131486",
+                    "NoteContent": "Iris joins the party",
+                    "Importance": 0
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "09161486",
+                    "NoteContent": "Marlos Urnrayle was defeated",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "09161486",
+                    "NoteContent": "Solus joins the party",
+                    "Importance": 0
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "09161486",
+                    "NoteContent": "Father Aurum was petrified",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "09181486",
+                    "NoteContent": "Liberated Scarlet Moon Hall",
+                    "Importance": 0
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "09211486",
+                    "NoteContent": "Defeated Gar Shatterkeel",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "10111486",
+                    "NoteContent": "Princes of the Apocalypse ended.",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "10111486",
+                    "NoteContent": "Imix was defeated",
+                    "Importance": 2
+                }
+            ],
+            "timers": [],
+            "Tag": "POTA",
+            "Name": "Princes of the Apocalypse",
+            "CurrentDate": "10111486"
+        },
+        {
+            "notes": [
+                {
+                    "DisplayString": null,
+                    "Date": "11311485",
+                    "NoteContent": "Boat Boys began!",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "11311485",
+                    "NoteContent": "Ravengard becomes chosen, is defeated by the Heroes of the Wide",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "12111485",
+                    "NoteContent": "The party embarks on the Akkalion",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "12211485",
+                    "NoteContent": "Arrives at Mintarn",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "12211485",
+                    "NoteContent": "Fought Ziggurd the Cruel",
+                    "Importance": 0
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "12221485",
+                    "NoteContent": "Freed the Tyrant of Mintarn",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "12261485",
+                    "NoteContent": "Arrived at the Secret hideout",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "12271485",
+                    "NoteContent": "Current Date",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "12271485",
+                    "NoteContent": "Defeated the Dragon Cult in Mintarn",
+                    "Importance": 2
+                }
+            ],
+            "timers": [
+                {
+                    "month": 1,
+                    "day": 7,
+                    "year": 1486,
+                    "keepTrack": true,
+                    "message": "Golden Lions",
+                    "pausedTime": 0,
+                    "DisplayString": null
+                }
+            ],
+            "Tag": "BB",
+            "Name": "Boat Boys",
+            "CurrentDate": "12271485"
+        },
+        {
+            "notes": [
+                {
+                    "DisplayString": null,
+                    "Date": "10111486",
+                    "NoteContent": "Hand of Fate began!",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "10251486",
+                    "NoteContent": "Fernrisbane was acquired",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "01201487",
+                    "NoteContent": "Arrived at Khanall and fought with the Janassars",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "01211487",
+                    "NoteContent": "Met the Illithid",
+                    "Importance": 0
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "01281487",
+                    "NoteContent": "SPIDERS AT RUTAWWA",
+                    "Importance": 0
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "02091487",
+                    "NoteContent": "Fought at Endurance Rock",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "02121487",
+                    "NoteContent": "Explored the ruins of Jassan",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "02291487",
+                    "NoteContent": "Solus gets cucked, Iris abandoned in Candlekeep",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "03011487",
+                    "NoteContent": "Teleport back to Dessarin Valley to consult Renwick",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "03011487",
+                    "NoteContent": "Gave Ethreain's skeleton to Renwick",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "03031487",
+                    "NoteContent": "Slew Nurvureem, the Dark Lady",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "03051487",
+                    "NoteContent": "Iris leaves the party, stays with Aurum",
+                    "Importance": 0
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "03061487",
+                    "NoteContent": "Party fights Zephyr",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "03071487",
+                    "NoteContent": "Iris begins construction and research",
+                    "Importance": 0
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "03161487",
+                    "NoteContent": "Almraiven is liberated",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "03191487",
+                    "NoteContent": "Reanimated Ohm",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "03201487",
+                    "NoteContent": "Defeated Professor Nagili",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "03271487",
+                    "NoteContent": "Cleared St. Wityn's Monastery",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04091487",
+                    "NoteContent": "Discover Allyn's Anvil",
+                    "Importance": 0
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04161487",
+                    "NoteContent": "BRONSON ACTIVATES",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04161487",
+                    "NoteContent": "Ohm is consecrated",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04311487",
+                    "NoteContent": "Adir draws Temperance and the World",
+                    "Importance": 0
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04311487",
+                    "NoteContent": "Massacre at Mintar",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "05011487",
+                    "NoteContent": "Saved Randir, fled from Mintar",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "05011487",
+                    "NoteContent": "Acquired the Battlecloak of Vycaena",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "05021487",
+                    "NoteContent": "Iris reveals her scars from Nurvureem",
+                    "Importance": 0
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "05161487",
+                    "NoteContent": "Arrived in Almraiven",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "05181487",
+                    "NoteContent": "Left Almraiven for Memnon",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "05211487",
+                    "NoteContent": "Arrived at the Monastery of St. Aban",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "05221487",
+                    "NoteContent": "Holy shit more eldritch spiders (Zephyr receives the Manacles of St. Aban)",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "05221487",
+                    "NoteContent": "Level up 15-16",
+                    "Importance": 0
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "05231487",
+                    "NoteContent": "Adir draws The Hanged Man",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "06051487",
+                    "NoteContent": "Saved Tarik",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "06101487",
+                    "NoteContent": "Resurrected Father Jahid",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "06181487",
+                    "NoteContent": "Arrived in Jassan",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "06261487",
+                    "NoteContent": "Met Hasim",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "06261487",
+                    "NoteContent": "Arrived in Memnon",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "06271487",
+                    "NoteContent": "Defeated Prama Ningra and teleported back to Salvation and Hasim was Plane Shifted",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "07011487",
+                    "NoteContent": "Found the Blue Dragon lair",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "07161487",
+                    "NoteContent": "Arrived at Janessar Hideout\r\n",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "07261487",
+                    "NoteContent": "Hasim returns",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "07261487",
+                    "NoteContent": "Arrive in Calimport",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "07271487",
+                    "NoteContent": "Wrecked Mansoor's Party",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "07301487",
+                    "NoteContent": "Arrived at St. Taril's, fought the undead below, had to retreat.",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "07311487",
+                    "NoteContent": "Left St. Taril's",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "08091487",
+                    "NoteContent": "Arrived in St. Noradnar's Hermitage, Sanctified it as the Hand's Hermitage.",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "08191487",
+                    "NoteContent": "Destroyed Crixalis at the Fane of the Scorpion, received a shard of the Calimemnon Crystal",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "08201487",
+                    "NoteContent": "Left the Fane of the Scorpion",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "08201487",
+                    "NoteContent": "Level 17",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "08291487",
+                    "NoteContent": "Searched for the crystal shard, not found. Teleported to Waterdeep.",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "09011487",
+                    "NoteContent": "Arrived at St. Ihrvyn",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "09021487",
+                    "NoteContent": "Fought at Volothamp",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "09021487",
+                    "NoteContent": "Teleported to Almraiven",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "09071487",
+                    "NoteContent": "Arrived back at St. Taril's ",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "09081487",
+                    "NoteContent": "Teleported to Waterdeep to shop",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "09121487",
+                    "NoteContent": "Arrived at House of the Broken God, defeated Ralayan.",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "09171487",
+                    "NoteContent": "Arrived at St. Rucir, investigated.",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "09181487",
+                    "NoteContent": "Arrived at St. Saril's Priory",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "09191487",
+                    "NoteContent": "Left St. Saril's Priory",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "09291487",
+                    "NoteContent": "Arrived at St. Liwan's Blessing",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "10081487",
+                    "NoteContent": "Cleansed Dobla's",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "10111487",
+                    "NoteContent": "Arrived at Lost Ajhuutal during the night - tsunami and earthquake on the lost apostaleum",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "10121487",
+                    "NoteContent": "Destroyed the Spider that Waits on a scouting mission.",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "10161487",
+                    "NoteContent": "Arrived at Almraiven, threw a party that night to fundraise.",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "10221487",
+                    "NoteContent": "Arrived at Suldophor and stopped the portals",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "10231487",
+                    "NoteContent": "Tsunami'd Suldophor",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "10281487",
+                    "NoteContent": "Arrived at Almraiven",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "11081487",
+                    "NoteContent": "Fought the Queen",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "11111487",
+                    "NoteContent": "Teleported to the Pyramid",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "11121487",
+                    "NoteContent": "Defeated Sapphiraktar the Demidracolich",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "11131487",
+                    "NoteContent": "Teleported to the island crater",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "11171487",
+                    "NoteContent": "Arrive at Ul'sahab",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "11251487",
+                    "NoteContent": "Hand of Fate returned, Adir became Chosen of Savras",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "11261487",
+                    "NoteContent": "The Army left for Calimport",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "11281487",
+                    "NoteContent": "The Siege of Calimport",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "12221487",
+                    "NoteContent": "Adir's Clone is done",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "01011488",
+                    "NoteContent": "Solus's Clone is done",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "01021488",
+                    "NoteContent": "Randir's Clone is done",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "01031488",
+                    "NoteContent": "Zephyr's Clone is done",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "01041488",
+                    "NoteContent": "Iris's Clone is done",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "01081488",
+                    "NoteContent": "Goes to the Elemental Plane of Earth to fight Ogremoch, planar binds him.",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "01121488",
+                    "NoteContent": "Went to the Plane of Air to fight Yan-C-Bin",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "02051488",
+                    "NoteContent": "Fought Imix ",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "02061488",
+                    "NoteContent": "Left Rivergard Keep",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "02151488",
+                    "NoteContent": "Current Date",
+                    "Importance": 2
+                }
+            ],
+            "timers": [
+                {
+                    "month": 7,
+                    "day": 6,
+                    "year": 1488,
+                    "keepTrack": true,
+                    "message": "Ogremoch's Planar Binding Ends",
+                    "pausedTime": 0,
+                    "DisplayString": null
+                },
+                {
+                    "month": 7,
+                    "day": 32,
+                    "year": 1488,
+                    "keepTrack": true,
+                    "message": "Olhydra's Planar Binding Ends",
+                    "pausedTime": 0,
+                    "DisplayString": null
+                }
+            ],
+            "Tag": "HOF",
+            "Name": "Hand of Fate",
+            "CurrentDate": "02151488"
+        },
+        {
+            "notes": [
+                {
+                    "DisplayString": null,
+                    "Date": "11151486",
+                    "NoteContent": "Heroes of Faerun began!",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "11161486",
+                    "NoteContent": "Escape from Velkynvelve",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "11241486",
+                    "NoteContent": "Met Ploopploopeen",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "11241486",
+                    "NoteContent": "Demogorgon destroyed Sloobludop",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "11261486",
+                    "NoteContent": "Started learning Common and sign language",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "12151486",
+                    "NoteContent": "Arrived in Gracklstugh",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "12151486",
+                    "NoteContent": "Met Werz Saltzbaron",
+                    "Importance": 0
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "12161486",
+                    "NoteContent": "Sarith leaves with the myconids",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "12161486",
+                    "NoteContent": "Started to find Droki",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "12161486",
+                    "NoteContent": "Jett-Kai dies.",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "12171486",
+                    "NoteContent": "Found the egg",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "12181486",
+                    "NoteContent": "Left Gracklstugh",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "12181486",
+                    "NoteContent": "All bridges burnt in Gracklstugh",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "12301486",
+                    "NoteContent": "Defeated Yestabrod, gross",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "12301486",
+                    "NoteContent": "Escaped Neverlight Grove",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "12301486",
+                    "NoteContent": "Arrived at Neverlight Grove",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "01051487",
+                    "NoteContent": "Found the Lost Tomb of Brysis",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "01081487",
+                    "NoteContent": "Escaped the Oozing Temple",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "01211487",
+                    "NoteContent": "Arrives in Blingdenstone",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "01251487",
+                    "NoteContent": "Came back to Blingdenstone after not finding Entemoch's Boon",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "01291487",
+                    "NoteContent": "Found Entemoch's Boon",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "02011487",
+                    "NoteContent": "Defeated the Pudding King",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "02031487",
+                    "NoteContent": "Emerged from the Underdark!",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "02041487",
+                    "NoteContent": "Rock Elemental crumbles",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "02161487",
+                    "NoteContent": "Arrived in Yartar",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "02291487",
+                    "NoteContent": "Arrives at Gauntlgrym",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04041487",
+                    "NoteContent": "Arrived at Mantol-Derith",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04151487",
+                    "NoteContent": "Met Xazax the Beholder",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04151487",
+                    "NoteContent": "Fraz Urb'luu's gem was destroyed",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "06041487",
+                    "NoteContent": "Arrived in Gravenhollow",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "06131487",
+                    "NoteContent": "Defeated Karazikar ($$$$$$$$$$$$)",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "06221487",
+                    "NoteContent": "Arrive at Araj",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "06271487",
+                    "NoteContent": "Basilisk Eggs Hatch",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "07271487",
+                    "NoteContent": "Arrive in the Labyrinth",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "08141487",
+                    "NoteContent": "Found the Maze Engine",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "08201487",
+                    "NoteContent": "Arrive at the Gallery of Angels",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "11011487",
+                    "NoteContent": "Arrive in Menzoberranzan",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "11131487",
+                    "NoteContent": "Return to Araj",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "11241487",
+                    "NoteContent": "Current Date",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "11241487",
+                    "NoteContent": "Arrived back in Araj to betray Vizeran.",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "11241487",
+                    "NoteContent": "Defeated Graz'zt and followed Jimjar",
+                    "Importance": 2
+                }
+            ],
+            "timers": [],
+            "Tag": "HOF2",
+            "Name": "Heroes of Faerun",
+            "CurrentDate": "11241487"
+        },
+        {
+            "notes": [
+                {
+                    "DisplayString": null,
+                    "Date": "06161487",
+                    "NoteContent": "Storm King's Thunder began!",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "06161487",
+                    "NoteContent": "Arrived in Nightstone and cleaned the town",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "06171487",
+                    "NoteContent": ":Saved the Nightstone Villagers",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "06181487",
+                    "NoteContent": "Left Nightstone",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "06201487",
+                    "NoteContent": "Arrived in Waterdeep",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "06211487",
+                    "NoteContent": "Leave Waterdeep",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "06231487",
+                    "NoteContent": "Arrive in Goldenfields",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "06241487",
+                    "NoteContent": "Goldenfields attacked",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "06251487",
+                    "NoteContent": "Rest at Goldenflelds",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "06291487",
+                    "NoteContent": "Arrive in Waterdeep",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "07031487",
+                    "NoteContent": "Arrive in Amphail",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "07041487",
+                    "NoteContent": "Leave Amphail",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "07051487",
+                    "NoteContent": "Met Zephyros",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "07061487",
+                    "NoteContent": "Started toward Amphail",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "07161487",
+                    "NoteContent": "Left Calling Horns after horses were eaten.",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "07211487",
+                    "NoteContent": "Olostin's Hold",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "07231487",
+                    "NoteContent": "Talked to Krowen, the archmage of the Moongleam tower.",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "07231487",
+                    "NoteContent": "Arrived in Everlund",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "07261487",
+                    "NoteContent": "Arrives in Silverymoon",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "07291487",
+                    "NoteContent": "Meets Harshnag",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "07311487",
+                    "NoteContent": "Arrive in Settlestone",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "08011487",
+                    "NoteContent": "Leave Settlestone",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "08131487",
+                    "NoteContent": "Arrived in the Eye of the All Father",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "08141487",
+                    "NoteContent": "Left the Eye of the All Father",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "08161487",
+                    "NoteContent": "Targen named chief of the Great Worm Tribe",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "08171487",
+                    "NoteContent": "Leave the Great Worm Cavern",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "08191487",
+                    "NoteContent": "Arrive at the Eye of the All Father with the giant shield",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "09071487",
+                    "NoteContent": "Arrived Beorunna's Well",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "09111487",
+                    "NoteContent": "Arrived at One Stone\r\n",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "09211487",
+                    "NoteContent": "Targen gave a speech to the Great Worm Tribe",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "09241487",
+                    "NoteContent": "Arrived at Eye of the All Father to sacrifice the horn for the location of the Stone Giant Thane",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "10021487",
+                    "NoteContent": "Arrived in Mirabar",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "10031487",
+                    "NoteContent": "Left Mirabar in a riverboat",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "10051487",
+                    "NoteContent": "Arrived in Luskan",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "10091487",
+                    "NoteContent": "Arrived in Port Llast\r\n",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "10111487",
+                    "NoteContent": "Arrive in Neverwinter: Teleported to Luskan",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "10291487",
+                    "NoteContent": "Arrived at Deadstone Cleft",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "10301487",
+                    "NoteContent": "Defeated Kayalithica, Rafiq perishes.",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "10301487",
+                    "NoteContent": "Fotlan meets the party",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "11041487",
+                    "NoteContent": "Ignatio proves himself as Shaman",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "11081487",
+                    "NoteContent": "Arrived in Greymaw Lands",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "11091487",
+                    "NoteContent": "Leave Greymaw Lands",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "11161487",
+                    "NoteContent": "Arrive in Loudwater, teleport to Silverymoon",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "11171487",
+                    "NoteContent": "Leave Silverymoon",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "11201487",
+                    "NoteContent": "Met Moog",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "11231487",
+                    "NoteContent": "Butchered Moog",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "11261487",
+                    "NoteContent": "Went into the High Forest",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "11281487",
+                    "NoteContent": "Arrived at the Grandfather's Tree",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "12011487",
+                    "NoteContent": "Stone Stand",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "12081487",
+                    "NoteContent": "Arrived at Silverymoon",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "12091487",
+                    "NoteContent": "Arrived to Everlund, Teleported to Neverwinter",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "12131487",
+                    "NoteContent": "Arrived it Gauntlgrym",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "12161487",
+                    "NoteContent": "Arrived at Morghur's Mound",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "12171487",
+                    "NoteContent": "Found the Relic in Morghur's Mound",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "12221487",
+                    "NoteContent": "Arrive at Mirabar",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "12301487",
+                    "NoteContent": "Joined the Dragon Cultists in their Airship",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "01031488",
+                    "NoteContent": "Arrived at the Svardborg",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "01031488",
+                    "NoteContent": "Left Svardborg",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "01061488",
+                    "NoteContent": "Arrived at Den of the All Father to drop off treasure",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "01091488",
+                    "NoteContent": "Arrived at Yakfolk village",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "01101488",
+                    "NoteContent": "Descended into the Fire Giant mines, retreated to rest at the Yakfolk video",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "01111488",
+                    "NoteContent": "Fought Duke Zalto, escape with Jasper.",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "01121488",
+                    "NoteContent": "Arrived at Deadsnows",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "01151488",
+                    "NoteContent": "Turned around to head towards Cloud Giant Castle",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "01161488",
+                    "NoteContent": "Arrived at Lyn Armaal, and immediately retreated.",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "01191488",
+                    "NoteContent": "Arrived at Gauntlgrym",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "01201488",
+                    "NoteContent": "Received gifts from Gauntlgrym",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "01211488",
+                    "NoteContent": "Arrived at Raven Rock, spent the night",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "01221488",
+                    "NoteContent": "Left Raven Rock for Glacial Rift",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "01241488",
+                    "NoteContent": "Fled the Glacial Rift",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "01281488",
+                    "NoteContent": "Arrived at Grudd Haug during the night",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "01301488",
+                    "NoteContent": "Arrived at Flint Rock",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "02011488",
+                    "NoteContent": "Fotlan turns...",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "02101488",
+                    "NoteContent": "Arrived in Gauntlgrym",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "02131488",
+                    "NoteContent": "Assaulted the Lyn Armaal during the night",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "02161488",
+                    "NoteContent": "Arrived in Olostin's Hold",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "02181488",
+                    "NoteContent": "Arrived at Everlund, Teleported to Yartar, Ransacked the guard captain's house and murdered him",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "02191488",
+                    "NoteContent": "Teleported to Maelstrom, then teleported to Yartar",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "03181488",
+                    "NoteContent": "Found the Morkoth, Teleported back to Maelstrom",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "03191488",
+                    "NoteContent": "Left Maelstrom to find Iymrith, teleported to Mirabar",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "03261488",
+                    "NoteContent": "Met Harshnag at the Eye of the All Father (ruined)",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04061488",
+                    "NoteContent": "Current Date",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04061488",
+                    "NoteContent": "Defeated Iymrith/Shaxan",
+                    "Importance": 2
+                }
+            ],
+            "timers": [],
+            "Tag": "SKT",
+            "Name": "Storm King's Thunder",
+            "CurrentDate": "04061488"
+        },
+        {
+            "notes": [
+                {
+                    "DisplayString": null,
+                    "Date": "04011488",
+                    "NoteContent": "Waterdeep Dragon Heist began!",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04021488",
+                    "NoteContent": "Remy graduates from the Cooks and bakers guild",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04021488",
+                    "NoteContent": "Floon is possesed by Intellect Devourer",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04031488",
+                    "NoteContent": "Characters meet Lief, the previous resident, now spectre of Trollskull.",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04031488",
+                    "NoteContent": "Characters are attacked at night by what seemed to be 2 drow.",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04031488",
+                    "NoteContent": "Olliver visits Harborfall for the first time.",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04031488",
+                    "NoteContent": "Trollskull Manor belongs to the players",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04041488",
+                    "NoteContent": "Player's meet Vajra Saffahr, the Blackstaff and somewhat willingly join The Grey Hands",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04041488",
+                    "NoteContent": "Players meet, and make a friend in Hlam on Mt. Waterdeep",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04041488",
+                    "NoteContent": "Remy poisons Emmek Frewn",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04051488",
+                    "NoteContent": "Players successfully hunt and capture a displacer beat for House Phylund",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04051488",
+                    "NoteContent": "Oliver discovers Esoterica and meets Johan Klaus",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04051488",
+                    "NoteContent": "Players secure funds from house Phylund for their Tavern",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04061488",
+                    "NoteContent": "Remy stabs Eremon and leaves the party",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04061488",
+                    "NoteContent": "Players meet Oggle the Boggle",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04061488",
+                    "NoteContent": "Players defeat the scarecrows and head into a mysterious forest",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04061488",
+                    "NoteContent": "Players travel into the Feywild and meet two Time Traveling Knights. Eremon and Renaud Cassalanter.",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04061488",
+                    "NoteContent": "Players travel to the Feywild and defeat Hilda Nettlequeen the Hag.",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04061488",
+                    "NoteContent": "Players head out to find missing children in Undercliff",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04071488",
+                    "NoteContent": "A Fireball goes off outside Trollskull manor.",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04071488",
+                    "NoteContent": "Duncan, Olliver, and Perry infiltrate Gralhund manor- killing everyone but Hraggram",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04131488",
+                    "NoteContent": "It's time for Remy to attend church.",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04231488",
+                    "NoteContent": "Went down into the Undermountain, Oliver died, revivified, went back up.",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04241488",
+                    "NoteContent": "Went back down into the Undermountain, found Dweomercore",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04251488",
+                    "NoteContent": "Alberic Petrified, Ornoth dies, Alran dies",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04251488",
+                    "NoteContent": "Signed up for classes",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04251488",
+                    "NoteContent": "Oliver encountered Bellamy once again. ",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04261488",
+                    "NoteContent": "Go back into the undermountain, kill Nylas, Jeffereis",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04281488",
+                    "NoteContent": "Went to find Muiral, Vinculus dies(?)",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04291488",
+                    "NoteContent": "Fought off goopies at Esoterica",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04291488",
+                    "NoteContent": "Left Dweomercore",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04301488",
+                    "NoteContent": "Joriah visited the monk in the mountain",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "04311488",
+                    "NoteContent": "Clean the Stone of Galorr",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "05021488",
+                    "NoteContent": "Killed Spite Harrowdale and the Oni",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "05021488",
+                    "NoteContent": "Classes start",
+                    "Importance": 1
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "05031488",
+                    "NoteContent": "Left for Skullport",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "05041488",
+                    "NoteContent": "Broke a bunch of useless statues",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "05051488",
+                    "NoteContent": "Rested in the Worm's Gullet",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "05051488",
+                    "NoteContent": "Killed a bunch of hags",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "05061488",
+                    "NoteContent": "Descended into the sewers of Skullport",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "05071488",
+                    "NoteContent": "Destroyed the giant snake.",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "05081488",
+                    "NoteContent": "Fought Zsulk Ssarmn and Nhyris Dhotek ",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "05091488",
+                    "NoteContent": "Destroyed the Phylactery, gave Johann the crown",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": "• (WDH) Returned to the Leaf's Shade and confronted Johann \n",
+                    "Date": "05101488",
+                    "NoteContent": "Returned to the Leaf's Shade and confronted Johann",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "05111488",
+                    "NoteContent": "Current Date",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": "• (WDH) Infiltrated Raventree Manor \n",
+                    "Date": "05111488",
+                    "NoteContent": "Infiltrated Raventree Manor",
+                    "Importance": 2
+                }
+            ],
+            "timers": [],
+            "Tag": "WDH",
+            "Name": "Waterdeep Dragon Heist",
+            "CurrentDate": "05111488"
+        },
+        {
+            "notes": [
+                {
+                    "DisplayString": null,
+                    "Date": "11271385",
+                    "NoteContent": "Party at Zelbross!",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "12011385",
+                    "NoteContent": "Reluctance Pt.1 ",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "02151466",
+                    "NoteContent": "Earthmotes fell",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "05261466",
+                    "NoteContent": "Current Date",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "05261466",
+                    "NoteContent": "Won the tournament in Dis",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "08201488",
+                    "NoteContent": "Tales of Magnus  began!",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "08211488",
+                    "NoteContent": "Finished Reluctance, night at the Yawning Portal",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "08221488",
+                    "NoteContent": "Doppelganger Bullshit",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "08231488",
+                    "NoteContent": "Hellscape",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "08241488",
+                    "NoteContent": "How the Earhmotes Lost their Wings",
+                    "Importance": 2
+                }
+            ],
+            "timers": [],
+            "Tag": "MAG",
+            "Name": "Tales of Magnus ",
+            "CurrentDate": "05261466"
+        },
+        {
+            "notes": [
+                {
+                    "DisplayString": null,
+                    "Date": "06121490",
+                    "NoteContent": "Tomb of Annihilation began!",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "06121490",
+                    "NoteContent": "Syndra Sylvane gathers the group together to brief them on the mission to steal Zaldara's phylactery",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "06131490",
+                    "NoteContent": "The party sets out for Cloakwood via boat",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "06161490",
+                    "NoteContent": "Stole Zaldara's phylactery and learned of the Soulmonger",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "06171490",
+                    "NoteContent": "Prepared and Teleported to Port Nyanzaru",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "06181490",
+                    "NoteContent": "Angus won the Dinosaur race, met with Jobal.",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "06191490",
+                    "NoteContent": "Began the Expedition",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "06201490",
+                    "NoteContent": "Encountered the Flaming Fist",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "06221490",
+                    "NoteContent": "Current Date",
+                    "Importance": 2
+                },
+                {
+                    "DisplayString": null,
+                    "Date": "06221490",
+                    "NoteContent": "Arrived at Fort Beluarian",
+                    "Importance": 2
+                }
+            ],
+            "timers": [
+                {
+                    "month": 9,
+                    "day": 5,
+                    "year": 1490,
+                    "keepTrack": false,
+                    "message": "Syndra Sylvane dies of the Death Curse",
+                    "pausedTime": 0,
+                    "DisplayString": null
+                }
+            ],
+            "Tag": "TOA",
+            "Name": "Tomb of Annihilation",
+            "CurrentDate": "06221490"
+        }
+    ],
+    "GeneralNoteList": [
+        {
+            "DisplayString": null,
+            "Date": "11311420",
+            "NoteContent": "Solus's Birthday (-10 years age)",
+            "Campaign": null,
+            "Importance": 2
+        },
+        {
+            "DisplayString": null,
+            "Date": "07021431",
+            "NoteContent": "Adir's Birthday",
+            "Campaign": null,
+            "Importance": 2
+        },
+        {
+            "DisplayString": null,
+            "Date": "05231458",
+            "NoteContent": "Randir's Birthday",
+            "Campaign": null,
+            "Importance": 2
+        },
+        {
+            "DisplayString": null,
+            "Date": "05121461",
+            "NoteContent": "Zephyr's Birthday",
+            "Campaign": null,
+            "Importance": 2
+        },
+        {
+            "DisplayString": null,
+            "Date": "08191464",
+            "NoteContent": "Iris's Birthday",
+            "Campaign": null,
+            "Importance": 2
+        },
+        {
+            "DisplayString": null,
+            "Date": "04051488",
+            "NoteContent": "It is Goldenight in Waterdeep!",
+            "Campaign": null,
+            "Importance": 2
+        },
+        {
+            "DisplayString": null,
+            "Date": "04071488",
+            "NoteContent": "It is Guildsmeet! A party is going on in the Waterdeep Market!",
+            "Campaign": null,
+            "Importance": 2
+        },
+        {
+            "DisplayString": null,
+            "Date": "09211487",
+            "NoteContent": "It is Runemeet! All Uthgardt pilgrimage to their tribe's respective Spirit Mounds.",
+            "Campaign": null,
+            "Importance": 2
+        }
+    ]
+}

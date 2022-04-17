@@ -20,52 +20,10 @@ interface CalendarMonthProps {
 }
 
 export class CalendarMonth extends React.Component<CalendarMonthProps> {
+
+
   render(): JSX.Element {
-
-    let weekNum = Math.ceil(
-      this.props.data.daysInMonth / this.props.data.daysInWeek
-    );
-    let html: JSX.Element[] = [];
-
-    for (let i = 0; i < weekNum; i++) {
-      let daysInThisWeek =
-        i === weekNum - 1
-          ? this.props.data.daysInMonth % this.props.data.daysInWeek
-          : this.props.data.daysInWeek;
-      if (daysInThisWeek === 0) daysInThisWeek = this.props.data.daysInWeek;
-      let dayArray: JSX.Element[] = [];
-
-      for (let dayNum = 0; dayNum < daysInThisWeek; dayNum++) {
-        let dayInMonth = i * this.props.data.daysInWeek + dayNum + 1;
-        let current = false;
-        if (
-          dayInMonth === this.props.state.day &&
-          this.props.state.month === this.props.data.number
-        )
-        {
-          current = true;
-        }
-        dayArray.push(
-          <CalendarDay
-            onClick={this.handleDayClick.bind(this)}
-            key={dayInMonth}
-            day={dayInMonth}
-            current={current}
-          ></CalendarDay>
-        ); // Have to do this to get unique keys
-      }
-
-      html.push(
-        <div className="week">
-          {dayArray.reduce((prev, current) => (
-            <>
-              {prev}
-              {current}
-            </>
-          ))}
-        </div>
-      );
-    }
+    let html = this.getDayArray();
     let className = `CalendarMonth ${this.props.active ? "active" : ""}`
     return (
       <div className={className} onClick={this.props.onClick} data-month={this.props.data.number}>
@@ -97,18 +55,64 @@ export class CalendarMonth extends React.Component<CalendarMonthProps> {
           )}
         </div>
         {this.props.data.intercal && 
-        <InterCalDay handleClick={this.handleDayClick.bind(this)} parent={this.props.data} state={this.props.state} data={this.props.data.intercal}></InterCalDay>
+        <InterCalDay onClick={this.props.operations.changeDay.bind(this)} parent={this.props.data} state={this.props.state} data={this.props.data.intercal}></InterCalDay>
         }
       </div>
     );
   }
 
-  handleDayClick(event: React.MouseEvent): void {
-    if (event.currentTarget.textContent)
-      this.props.operations.changeDay(
-        parseInt(event.currentTarget.textContent)
+
+  getDayArray() : JSX.Element[] {
+    let weekNum = Math.ceil(
+      this.props.data.daysInMonth / this.props.data.daysInWeek
+    );
+    let html: JSX.Element[] = [];
+
+    for (let i = 0; i < weekNum; i++) {
+      let daysInThisWeek =
+        i === weekNum - 1
+          ? this.props.data.daysInMonth % this.props.data.daysInWeek
+          : this.props.data.daysInWeek;
+      if (daysInThisWeek === 0) daysInThisWeek = this.props.data.daysInWeek;
+      let dayArray: JSX.Element[] = [];
+
+      for (let dayNum = 0; dayNum < daysInThisWeek; dayNum++) {
+        let dayInMonth = i * this.props.data.daysInWeek + dayNum + 1;
+        let activeDay = false;
+        if (
+          dayInMonth === this.props.state.day &&
+          this.props.state.month === this.props.data.number
+        )
+        {
+          activeDay = true;
+        }
+
+        let notes = this.props.data.notes[dayInMonth]
+        dayArray.push(
+          <CalendarDay
+            onClick={this.props.operations.changeDay.bind(this)}
+            key={dayInMonth}
+            notes={notes}
+            day={dayInMonth}
+            active={activeDay}
+          ></CalendarDay>
+        ); // Have to do this to get unique keys
+      }
+
+      html.push(
+        <div className="week">
+          {dayArray.reduce((prev, current) => (
+            <>
+              {prev}
+              {current}
+            </>
+          ))}
+        </div>
       );
-  }
+    }
+    return html
+}
+
 
   handleMonthClick(event: React.MouseEvent): void {
     let value: string | null = event.currentTarget.getAttribute('data-value');

@@ -1,4 +1,4 @@
-import { CalendarData, CalendarMonthData, CalendarState, Date } from "../models/types";
+import { CalendarData, CalendarMonthData, CalendarState, Date, InterCalData } from "../models/types";
 
 
 
@@ -11,10 +11,8 @@ export abstract class AbstractCalendarController {
     abstract getCalendarState() : CalendarState
     abstract getCalendarData() : CalendarData
     abstract getCurrentMonthData() : CalendarMonthData
-
     abstract getMonthData(month : number): CalendarMonthData
-
     abstract changeDateBy(date : Date) : CalendarState 
-
+    abstract getIntercalData(month: number) : InterCalData | void
 
 }

@@ -26,7 +26,7 @@ export class CalendarYear extends React.Component<CalendarYearProps,CalendarYear
     if (this.state)
     {
       this.props.data.calendar.daysInMonth.forEach((monthDays: number, i: number) => {
-        if (this.state && monthDays > 0)
+        if (this.state && monthDays > 0) 
         {
           monthViews.push(
             <CalendarMonth

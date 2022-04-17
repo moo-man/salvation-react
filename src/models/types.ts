@@ -1,3 +1,6 @@
+import { Note } from "./Note";
+import { Campaign } from "./Campaign"
+
 export interface Date {
   day?: number;
   month?: number;
@@ -43,10 +46,24 @@ export interface CalendarMonthData {
   daysInMonth: number;
   daysInWeek: number;
   intercal?: InterCalData;
+  notes : {[key: string] : Note[]}
 }
 
 
 export interface CalendarOperations {
   changeDay(day: number): void;
   changeMonth(number: number): void;
+}
+
+
+export enum Importance {None, Campaign, Global}
+
+
+export interface CampaignData {
+  notes : {
+    [key: string] : Note[]
+  }
+  campaigns :   {
+    [key: string] : Campaign
+  }
 }
