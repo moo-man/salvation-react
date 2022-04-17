@@ -15,57 +15,57 @@ export class TestHarptosCalendar extends AbstractCalendarController {
   protected campaignData: CampaignData | null = null;
 
   async fetchData(): Promise<void> {
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       fetch('/data.json')
-      .then((json) => json.json())
-      .then((data) => {
-        this.loadCampaignData(data);
-        this.model = new Calendar({
-          calendar: {
-            name: 'Calendar of Harptos',
-            intercal: [
-              { name: 'Midwinter', month: 1 },
-              { name: 'Greengrass', month: 4 },
-              { name: 'Shieldmeet', month: 7, leap: true },
-              { name: 'Highharvestide', month: 9 },
-              { name: 'Feast of the Moon', month: 11 },
-            ],
-            monthNames: [
-              '',
-              'Hammer',
-              'Alturiak',
-              'Ches',
-              'Tarsakh',
-              'Mirtul',
-              'Kythorn',
-              'Flamerule',
-              'Eleasis',
-              'Eleint',
-              'Marpenoth',
-              'Uktar',
-              'Nightal',
-            ],
-            monthsInYear: 12,
-            daysInYear: 365,
-            daysInMonth: [0, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30],
-            daysInWeek: 10,
-            leapYear: {
-              month: 7,
-              recurrence: 4,
+        .then((json) => json.json())
+        .then((data) => {
+          this.loadCampaignData(data);
+          this.setActiveCampaign("TOA")
+          this.model = new Calendar({
+            calendar: {
+              name: 'Calendar of Harptos',
+              intercal: [
+                { name: 'Midwinter', month: 1 },
+                { name: 'Greengrass', month: 4 },
+                { name: 'Shieldmeet', month: 7, leap: true },
+                { name: 'Highharvestide', month: 9 },
+                { name: 'Feast of the Moon', month: 11 },
+              ],
+              monthNames: [
+                '',
+                'Hammer',
+                'Alturiak',
+                'Ches',
+                'Tarsakh',
+                'Mirtul',
+                'Kythorn',
+                'Flamerule',
+                'Eleasis',
+                'Eleint',
+                'Marpenoth',
+                'Uktar',
+                'Nightal',
+              ],
+              monthsInYear: 12,
+              daysInYear: 365,
+              daysInMonth: [0, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30],
+              daysInWeek: 10,
+              leapYear: {
+                month: 7,
+                recurrence: 4,
+              },
             },
-          },
-          state: {
-            day: 1,
-            month: 1,
-            year: 1490,
-            date: ``,
-          },
+            state: {
+              day: 1,
+              month: 1,
+              year: 1490,
+              date: ``,
+            },
+          });
+          this.dataLoaded = true;
+          resolve();
         });
-        this.dataLoaded = true;
-        resolve()
-      });
-    })
-
+    });
   }
 
   setDate(date: Date): CalendarState {
@@ -119,30 +119,28 @@ export class TestHarptosCalendar extends AbstractCalendarController {
         name: this.model.data.calendar.monthNames[month],
         number: month,
         intercal: this.getIntercalData(month) || undefined,
-        notes : this.getMonthNotes(month)
+        notes: this.getMonthNotes(month),
       };
     } else throw Error('No Calendar Model');
   }
-  getMonthNotes(month: number): {[key: string] : Note[]} {
-    let monthNotes : {[key: string] : Note[]} = {}
+  getMonthNotes(month: number): { [key: string]: Note[] } {
+    let monthNotes: { [key: string]: Note[] } = {};
     Object.keys(this.campaignData?.notes || {})
-          .filter(date => Number(date.split(",")[0]) === month)
-          .forEach(date => {
-            let day = Number(date.split(",")[1]).toString()
+      .filter((date) => Number(date.split(',')[0]) === month)
+      .forEach((date) => {
+        let day = Number(date.split(',')[1]).toString();
 
-            if (this.campaignData)
-            {
-              if (monthNotes[day])
-              {
-                monthNotes[day] = monthNotes[day].concat(this.campaignData.notes[date])
-              }
-              else 
-              {
-                monthNotes[day] = this.campaignData.notes[date]
-              }
-            }
-          })
-    return monthNotes
+        if (this.campaignData) {
+          if (monthNotes[day]) {
+            monthNotes[day] = monthNotes[day].concat(
+              this.campaignData.notes[date]
+            );
+          } else {
+            monthNotes[day] = this.campaignData.notes[date];
+          }
+        }
+      });
+    return monthNotes;
   }
 
   getIntercalData(month: number): InterCalData | void {
@@ -187,33 +185,42 @@ export class TestHarptosCalendar extends AbstractCalendarController {
     for (let campaign of data.CampaignList) {
       this.campaignData.campaigns[campaign.Tag] = {
         name: campaign.Name,
-        currentDate: TestHarptosCalendar.convertStringDate(campaign.CurrentDate),
+        currentDate: TestHarptosCalendar.convertStringDate(
+          campaign.CurrentDate
+        ),
         tag: campaign.Tag,
       };
 
-      for(let note of campaign.notes)
-      {
-        let date = TestHarptosCalendar.convertStringDate(note.Date)
+      for (let note of campaign.notes) {
+        let date = TestHarptosCalendar.convertStringDate(note.Date);
         let noteData = {
           content: note.NoteContent,
           date,
-          importance : parseInt(note.Importance),
-          campaign : campaign.Tag as string
-        }
-        if(this.campaignData.notes[date]?.length)
-        {
-          this.campaignData.notes[date].push(noteData)
-        }
-        else 
-        {
-          this.campaignData.notes[date] = [noteData]
+          importance: parseInt(note.Importance),
+          campaign: campaign.Tag as string,
+        };
+        if (this.campaignData.notes[date]?.length) {
+          this.campaignData.notes[date].push(noteData);
+        } else {
+          this.campaignData.notes[date] = [noteData];
         }
       }
     }
   }
 
-  static convertStringDate(date : string) : string {
-    let dateSplit = date.split("");
-    return `${dateSplit[0]}${dateSplit[1]},${dateSplit[2]}${dateSplit[3]},${dateSplit[4]}${dateSplit[5]}${dateSplit[6]}${dateSplit[7]}`
+  setActiveCampaign(campaignTag: string): void {
+    if (this.campaignData) {
+      this.campaignData.active = this.campaignData.campaigns[campaignTag];
+      Object.values(this.campaignData.notes)
+        .reduce((prev, current): Note[] => current.concat(prev), [])
+        .forEach((n) => {
+          if (n.campaign === campaignTag) n.active = true;
+        });
+    }
+  }
+
+  static convertStringDate(date: string): string {
+    let dateSplit = date.split('');
+    return `${dateSplit[0]}${dateSplit[1]},${dateSplit[2]}${dateSplit[3]},${dateSplit[4]}${dateSplit[5]}${dateSplit[6]}${dateSplit[7]}`;
   }
 }

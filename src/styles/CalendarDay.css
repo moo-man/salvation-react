@@ -16,3 +16,20 @@
 .day.active {
     box-shadow: inset 0px 0px 10px #6a070a;
 }
+
+.day .notes {
+    display: flex;
+    flex-wrap:wrap;
+    padding: 1px;
+    overflow: hidden;
+    max-height: calc(100% - 20px)
+}
+
+.day .notes .marker {
+    opacity : 0.4;
+}
+
+.day .notes .marker.active {
+    color: #6a070a;
+    opacity: 1
+}

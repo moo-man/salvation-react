@@ -27,6 +27,8 @@ class CalendarView extends React.Component<CalendarViewProps, CalendarState> {
     }
     let calendarData = this.controller.getCalendarData()
     return (
+      <div className="CalendarView">
+
       <div className="Calendar">
         <button onClick={this.toggleView.bind(this)}><FontAwesomeIcon icon={faCalendarDay}/></button>
         <CalendarHeader name={calendarData.calendar.name}></CalendarHeader>
@@ -40,6 +42,10 @@ class CalendarView extends React.Component<CalendarViewProps, CalendarState> {
           }}></CalendarMonth> 
           : <CalendarYear data={calendarData} state={this.state} getMonthData={this.controller.getMonthData.bind(this.controller)}></CalendarYear>}
 
+      </div>
+      <div className="Campaign">
+
+      </div>
       </div>
     );
   }

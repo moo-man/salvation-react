@@ -66,4 +66,5 @@ export interface CampaignData {
   campaigns :   {
     [key: string] : Campaign
   }
+  active? : Campaign
 }

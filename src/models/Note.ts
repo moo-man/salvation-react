@@ -5,4 +5,5 @@ export class Note {
     importance : Importance = Importance.None;
     date = ""
     campaign : string | undefined = undefined
+    active? : boolean
 }

@@ -18,6 +18,18 @@
     font-size: 12px;
 }
 
+
+.CalendarYear .day .notes {
+
+    height: calc(100% - 18px);
+}
+
+.CalendarYear .day .notes .marker
+{
+    font-size: 5px;
+}
+
+
 .CalendarYear .CalendarMonth.active  {
     box-shadow: inset 0px 0px 10px #6a070a;
 }

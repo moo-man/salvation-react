@@ -22,7 +22,10 @@ export class CalendarDay extends React.Component<CalendarDayProps> {
         {this.props.notes ? (
           <div className="notes">
             {this.props.notes
-              .map((i) => <FontAwesomeIcon icon={faCircle} />)
+              .map((n) => {
+                let markerClass = n.active ? "marker active" : "marker"  
+                return <span className={markerClass}><FontAwesomeIcon icon={faCircle}/></span>
+              })
               .reduce(
                 (prev, current): JSX.Element => (
                   <>
