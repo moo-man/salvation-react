@@ -7,6 +7,7 @@ import {
   CampaignData,
   Date,
   InterCalData,
+  NoteType,
 } from '../models/types';
 import { AbstractCalendarController } from './AbstractCalendarController';
 
@@ -107,23 +108,23 @@ export class TestHarptosCalendar extends AbstractCalendarController {
 
   getCurrentMonthData(): CalendarMonthData {
     if (this.model) {
-      return this.getMonthData(this.model.state.month);
+      return this.getMonthData(this.model.state.month, this.model.state.year);
     } else throw Error('No Calendar Model');
   }
 
-  getMonthData(month: number): CalendarMonthData {
+  getMonthData(month: number, year : number): CalendarMonthData {
     if (this.model) {
       return {
         daysInMonth: this.model.data.calendar.daysInMonth[month],
         daysInWeek: this.model.data.calendar.daysInWeek,
         name: this.model.data.calendar.monthNames[month],
         number: month,
-        intercal: this.getIntercalData(month) || undefined,
-        notes: this.getMonthNotes(month),
+        intercal: this.getIntercalData(month, year) || undefined,
+        notes: this.getMonthNotes(month, year),
       };
     } else throw Error('No Calendar Model');
   }
-  getMonthNotes(month: number): { [key: string]: Note[] } {
+  getMonthNotes(month: number, year : number): { [key: string]: Note[] } {
     let monthNotes: { [key: string]: Note[] } = {};
     Object.keys(this.campaignData?.notes || {})
       .filter((date) => Number(date.split(',')[0]) === month)
@@ -133,17 +134,29 @@ export class TestHarptosCalendar extends AbstractCalendarController {
         if (this.campaignData) {
           if (monthNotes[day]) {
             monthNotes[day] = monthNotes[day].concat(
-              this.campaignData.notes[date]
+              this.campaignData.notes[date].map(n => {
+                let noteYear = Number(n.date.split(",")[2].toString());
+                n.distance = year - noteYear;
+                if (!n.campaign)
+                  n.distance = 0
+                return n
+              })
             );
           } else {
-            monthNotes[day] = this.campaignData.notes[date];
+            monthNotes[day] = this.campaignData.notes[date].map(n => {
+              let noteYear = Number(n.date.split(",")[2].toString());
+              n.distance = year - noteYear;
+              if (!n.campaign)
+                n.distance = 0
+              return n
+            });
           }
         }
       });
     return monthNotes;
   }
 
-  getIntercalData(month: number): InterCalData | void {
+  getIntercalData(month: number, year: number): InterCalData | void {
     if (this.model) {
       let intercal = this.model.data.calendar.intercal.find(
         (i) => month === i.month
@@ -191,6 +204,9 @@ export class TestHarptosCalendar extends AbstractCalendarController {
         tag: campaign.Tag,
       };
 
+      campaign.notes[0].start = true;
+      campaign.notes[campaign.notes.length-1].end = true;
+
       for (let note of campaign.notes) {
         let date = TestHarptosCalendar.convertStringDate(note.Date);
         let noteData = {
@@ -198,7 +214,15 @@ export class TestHarptosCalendar extends AbstractCalendarController {
           date,
           importance: parseInt(note.Importance),
           campaign: campaign.Tag as string,
+          type: NoteType.Normal
         };
+
+        if (note.start)
+          noteData.type = NoteType.Start
+
+        if (note.end)
+          noteData.type = NoteType.Stop
+
         if (this.campaignData.notes[date]?.length) {
           this.campaignData.notes[date].push(noteData);
         } else {

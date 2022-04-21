@@ -5,6 +5,13 @@
     justify-content: space-evenly
 }
 
+.CalendarYear .months
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly
+}
+
 .CalendarYear > .CalendarMonth
 {
     margin: 10px;

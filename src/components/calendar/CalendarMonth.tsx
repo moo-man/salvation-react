@@ -6,9 +6,8 @@ import {
   CalendarOperations,
   CalendarState,
 } from '../../models/types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { InterCalDay } from './InterCalDay';
+import { ForwardBackward } from './ForwardBackward';
 
 interface CalendarMonthProps {
   data: CalendarMonthData;
@@ -28,21 +27,11 @@ export class CalendarMonth extends React.Component<CalendarMonthProps> {
     return (
       <div className={className} onClick={this.props.onClick} data-month={this.props.data.number}>
         <header>
-          {this.props.mode === 'month' ? (
-            <button data-value="-1" onClick={this.handleMonthClick.bind(this)}>
-              <FontAwesomeIcon icon={faChevronLeft} />
-            </button>
-          ) : (
-            <></>
-          )}
-          <h3>{this.props.data.name}</h3>
-          {this.props.mode === 'month' ? (
-            <button data-value="1" onClick={this.handleMonthClick.bind(this)}>
-              <FontAwesomeIcon icon={faChevronRight} />
-            </button>
-          ) : (
-            <></>
-          )}
+          {this.props.mode === "month" 
+          ? <ForwardBackward text={this.props.data.name} onForward={this.handleMonthClick.bind(this)} onBackward={this.handleMonthClick.bind(this)}></ForwardBackward>
+          : <h3>{this.props.data.name}</h3>
+        
+          }
         </header>
         <div className="days">
           {html.reduce(
@@ -115,12 +104,7 @@ export class CalendarMonth extends React.Component<CalendarMonthProps> {
 
 
   handleMonthClick(event: React.MouseEvent): void {
-    let value: string | null = event.currentTarget.getAttribute('data-value');
-
-    if (value) {
-      let multiplier: number = parseInt(value);
-
-      this.props.operations.changeMonth(multiplier);
-    }
+    let direction = event.currentTarget.getAttribute('data-type');
+    this.props.operations.changeMonth(direction === "forward" ? 1 : -1);
   }
 }

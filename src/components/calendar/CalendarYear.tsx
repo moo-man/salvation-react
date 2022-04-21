@@ -1,73 +1,90 @@
 import React from 'react';
-import { CalendarData, CalendarMonthData, CalendarState } from '../../models/types';
+import {
+  CalendarData,
+  CalendarMonthData,
+  CalendarState,
+} from '../../models/types';
 import '../../styles/CalendarYear.css';
 import { CalendarMonth } from './CalendarMonth';
+import { ForwardBackward } from './ForwardBackward';
 
 interface CalendarYearProps {
   data: CalendarData;
   state: CalendarYearState;
-  getMonthData: (month: number) => CalendarMonthData
+  getMonthData: (month: number, year: number) => CalendarMonthData;
+  operations: { changeYear: (year: number) => void };
 }
 
 interface CalendarYearState extends CalendarState {
-  activeMonth? : number
+  activeMonth?: number;
 }
 
-export class CalendarYear extends React.Component<CalendarYearProps,CalendarYearState> {
-
-  constructor(props: CalendarYearProps)
-  {
-    super(props);
-    this.state = props.state;
-  }
-
+export class CalendarYear extends React.Component<CalendarYearProps> {
   render(): JSX.Element {
     let monthViews: JSX.Element[] = [];
-    if (this.state)
-    {
-      this.props.data.calendar.daysInMonth.forEach((monthDays: number, i: number) => {
-        if (this.state && monthDays > 0) 
-        {
+    this.props.data.calendar.daysInMonth.forEach(
+      (monthDays: number, i: number) => {
+        if (monthDays > 0) {
           monthViews.push(
             <CalendarMonth
               onClick={this.handleMonthClick.bind(this)}
-              active={this.state.activeMonth === i}
-              mode={"year"}
+              active={this.props.state.activeMonth === i}
+              mode={'year'}
               key={`${i},${this.props.state.year}`}
               state={this.props.state}
-              data={this.props.getMonthData(i)}
-              operations={
-                {
-                changeDay : (day: number) : void=> {return},
-                changeMonth : (number: number) : void=> {return}
-                }
-              }
+              data={this.props.getMonthData(i, this.props.state.year)}
+              operations={{
+                changeDay: (day: number): void => {
+                  return;
+                },
+                changeMonth: (number: number): void => {
+                  return;
+                },
+              }}
             ></CalendarMonth>
           );
         }
-      });
-    }
-
+      }
+    );
 
     return (
       <div className="CalendarYear">
-        {monthViews.reduce((prev : JSX.Element, current : JSX.Element) : JSX.Element => (<>{prev}{current}</>))}
+        <header>
+          <ForwardBackward
+            text={this.props.state.year.toString()}
+            onForward={this.handleYearClick.bind(this)}
+            onBackward={this.handleYearClick.bind(this)}
+          ></ForwardBackward>
+        </header>
+        <div className="months">
+          {monthViews.reduce(
+            (prev: JSX.Element, current: JSX.Element): JSX.Element => (
+              <>
+                {prev}
+                {current}
+              </>
+            ),
+            <></>
+          )}
+        </div>
       </div>
     );
   }
 
-  handleMonthClick(event : React.MouseEvent): void
-  {
-    let month = event.currentTarget.getAttribute("data-month")
-    if (event.currentTarget.classList.contains("active"))
-    {
-      this.setState({activeMonth : undefined})
-      return
+  handleMonthClick(event: React.MouseEvent): void {
+    let month = event.currentTarget.getAttribute('data-month');
+    if (event.currentTarget.classList.contains('active')) {
+      this.setState({ activeMonth: undefined });
+      return;
     }
-    
-    if (month)
-    {
-      this.setState({activeMonth : parseInt(month)})
+
+    if (month) {
+      this.setState({ activeMonth: parseInt(month) });
     }
+  }
+
+  handleYearClick(event: React.MouseEvent): void {
+    let direction = event.currentTarget.getAttribute('data-type');
+    this.props.operations.changeYear(direction === 'forward' ? 1 : -1);
   }
 }

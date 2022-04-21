@@ -1,4 +1,4 @@
-import { Importance } from "./types"
+import { Importance, NoteType } from "./types"
 
 export class Note {
     content = "";
@@ -6,4 +6,7 @@ export class Note {
     date = ""
     campaign : string | undefined = undefined
     active? : boolean
+    type: NoteType = NoteType.Normal
+    distance? : number = 0
 }
+

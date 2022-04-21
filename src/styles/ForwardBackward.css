@@ -1,0 +1,10 @@
+
+.direction-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.direction-controls > *{
+    margin: 5px
+}

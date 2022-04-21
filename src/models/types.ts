@@ -57,6 +57,7 @@ export interface CalendarOperations {
 
 
 export enum Importance {None, Campaign, Global}
+export enum NoteType {Normal, Start, Stop}
 
 
 export interface CampaignData {
@@ -68,3 +69,4 @@ export interface CampaignData {
   }
   active? : Campaign
 }
+

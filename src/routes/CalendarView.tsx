@@ -13,11 +13,10 @@ interface CalendarViewProps {
 }
 
 class CalendarView extends React.Component<CalendarViewProps, CalendarState> {
-
   componentDidMount() {
     this.controller.fetchData().then(() => {
       this.setState(this.controller.getCalendarState());
-      this.setState({viewMode : "month"})
+      this.setState({ viewMode: 'month' });
     });
   }
 
@@ -25,48 +24,63 @@ class CalendarView extends React.Component<CalendarViewProps, CalendarState> {
     if (!this.state) {
       return <div></div>;
     }
-    let calendarData = this.controller.getCalendarData()
+    let calendarData = this.controller.getCalendarData();
     return (
       <div className="CalendarView">
-
-      <div className="Calendar">
-        <button onClick={this.toggleView.bind(this)}><FontAwesomeIcon icon={faCalendarDay}/></button>
-        <CalendarHeader name={calendarData.calendar.name}></CalendarHeader>
-        {this.state.viewMode === "month" ? <CalendarMonth 
-          data={this.controller.getCurrentMonthData()}
-          state={this.state}
-          mode={'month'}
-          operations={{
-            changeDay: this.changeDay,
-            changeMonth: this.changeMonth,
-          }}></CalendarMonth> 
-          : <CalendarYear data={calendarData} state={this.state} getMonthData={this.controller.getMonthData.bind(this.controller)}></CalendarYear>}
-
-      </div>
-      <div className="Campaign">
-
-      </div>
+        <div className="Calendar">
+          <button onClick={this.toggleView.bind(this)}>
+            <FontAwesomeIcon icon={faCalendarDay} />
+          </button>
+          <CalendarHeader name={calendarData.calendar.name}></CalendarHeader>
+          {this.state.viewMode === 'month' ? (
+            <CalendarMonth
+              data={this.controller.getCurrentMonthData()}
+              state={this.state}
+              mode={'month'}
+              operations={{
+                changeDay: this.changeDay.bind(this),
+                changeMonth: this.changeMonth.bind(this),
+              }}
+            ></CalendarMonth>
+          ) : (
+            <CalendarYear
+              data={calendarData}
+              state={this.state}
+              getMonthData={this.controller.getMonthData.bind(this.controller)}
+              operations={{
+                changeYear : this.changeYear.bind(this)
+              }}
+            ></CalendarYear>
+          )}
+        </div>
+        <div className="Campaign"></div>
       </div>
     );
   }
 
-  changeDay = async (day: number) => {
+  async changeDay (day: number) {
     // Extract this into generic controller?
     this.setState(await this.controller.setDate({ day }));
-  }
+  };
 
-  changeMonth = async (number: number) => {
+  async changeMonth (number: number) {
     this.setState(await this.controller.changeDateBy({ month: number }));
+  };
+
+
+  async changeYear (number: number) {
+    this.setState(await this.controller.changeDateBy({ year: number }));
+  };
+
+
+  switchViewTo(view: string) {
+    this.setState({ viewMode: view });
   }
 
-  switchViewTo(view : string)
-  {
-    this.setState({viewMode : view})
-  }
-
-  toggleView()
-  {
-    this.setState({viewMode : this.state.viewMode === "month" ? "year" : "month"})
+  toggleView() {
+    this.setState({
+      viewMode: this.state.viewMode === 'month' ? 'year' : 'month',
+    });
   }
 
   get controller(): AbstractCalendarController {

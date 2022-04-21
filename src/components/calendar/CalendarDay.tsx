@@ -1,7 +1,8 @@
-import { faCircle } from '@fortawesome/free-solid-svg-icons';
+import { faCircle, faPlay, faStop } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { MouseEventHandler } from 'react';
 import { Note } from '../../models/Note';
+import { NoteType } from '../../models/types';
 import '../../styles/CalendarDay.css';
 
 interface CalendarDayProps {
@@ -24,8 +25,17 @@ export class CalendarDay extends React.Component<CalendarDayProps> {
             {this.props.notes
               .map((n) => {
                 let markerClass = n.active ? "marker active" : "marker"  
-                return <span className={markerClass}><FontAwesomeIcon icon={faCircle}/></span>
+                let opacity = 1 - ((Math.abs(n.distance || 0))/ 5)
+                if (opacity <= 0)
+                  return undefined
+                let icon = faCircle;
+                if (n.type === NoteType.Stop)
+                  icon = faStop
+                if (n.type === NoteType.Start)
+                  icon = faPlay
+                return <span style={{opacity}} className={markerClass}><FontAwesomeIcon icon={icon}/></span>
               })
+              .filter(n => n)
               .reduce(
                 (prev, current): JSX.Element => (
                   <>
