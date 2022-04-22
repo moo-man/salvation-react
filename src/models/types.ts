@@ -28,14 +28,14 @@ export interface CalendarDefinition {
   daysInMonth: number[];
   daysInWeek: number;
   leapYear: {
-    month: number;
+    date: Date;
     recurrence: number;
   };
   intercal: InterCalData[];
 }
 
 export interface InterCalData {
-  month: number;
+  date : Date
   leap?: boolean;
   name: string;
 }
@@ -43,16 +43,22 @@ export interface InterCalData {
 export interface CalendarMonthData {
   name: string;
   number: number;
+  year: number;
   daysInMonth: number;
   daysInWeek: number;
-  intercal?: InterCalData;
+  intercal: InterCalData[];
   notes : {[key: string] : Note[]}
 }
 
 
 export interface CalendarOperations {
   changeDay(day: number): void;
-  changeMonth(number: number): void;
+  changeMonth(month: number): void;
+  changeYear(year: number): void
+  setDay(day: number): void;
+  setMonth(month: number): void;
+  setYear(year: number): void
+  switchViewTo(view : string) : void
 }
 
 

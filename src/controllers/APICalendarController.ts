@@ -4,7 +4,7 @@ import { AbstractCalendarController } from "./AbstractCalendarController";
 
 export class APICalendarController extends AbstractCalendarController
 {
-    getIntercalData(month: number): void | InterCalData {
+    getIntercalData(month: number, year : number): InterCalData[] {
         throw new Error("Method not implemented.");
     }
     getMonthData(month: number): CalendarMonthData {

@@ -13,6 +13,6 @@ export abstract class AbstractCalendarController {
     abstract getCurrentMonthData() : CalendarMonthData
     abstract getMonthData(month : number, year : number): CalendarMonthData
     abstract changeDateBy(date : Date) : CalendarState 
-    abstract getIntercalData(month: number, year : number) : InterCalData | void
+    abstract getIntercalData(month: number, year : number) : InterCalData[] | void
 
 }

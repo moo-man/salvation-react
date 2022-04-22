@@ -2,6 +2,7 @@ import React from 'react';
 import {
   CalendarData,
   CalendarMonthData,
+  CalendarOperations,
   CalendarState,
 } from '../../models/types';
 import '../../styles/CalendarYear.css';
@@ -10,14 +11,11 @@ import { ForwardBackward } from './ForwardBackward';
 
 interface CalendarYearProps {
   data: CalendarData;
-  state: CalendarYearState;
+  state: CalendarState;
   getMonthData: (month: number, year: number) => CalendarMonthData;
-  operations: { changeYear: (year: number) => void };
+  operations: CalendarOperations
 }
 
-interface CalendarYearState extends CalendarState {
-  activeMonth?: number;
-}
 
 export class CalendarYear extends React.Component<CalendarYearProps> {
   render(): JSX.Element {
@@ -28,19 +26,12 @@ export class CalendarYear extends React.Component<CalendarYearProps> {
           monthViews.push(
             <CalendarMonth
               onClick={this.handleMonthClick.bind(this)}
-              active={this.props.state.activeMonth === i}
+              active={this.props.state.month === i}
               mode={'year'}
               key={`${i},${this.props.state.year}`}
               state={this.props.state}
               data={this.props.getMonthData(i, this.props.state.year)}
-              operations={{
-                changeDay: (day: number): void => {
-                  return;
-                },
-                changeMonth: (number: number): void => {
-                  return;
-                },
-              }}
+              operations={this.props.operations}
             ></CalendarMonth>
           );
         }
@@ -73,14 +64,8 @@ export class CalendarYear extends React.Component<CalendarYearProps> {
 
   handleMonthClick(event: React.MouseEvent): void {
     let month = event.currentTarget.getAttribute('data-month');
-    if (event.currentTarget.classList.contains('active')) {
-      this.setState({ activeMonth: undefined });
-      return;
-    }
-
-    if (month) {
-      this.setState({ activeMonth: parseInt(month) });
-    }
+    if (month)
+      this.props.operations.setMonth(parseInt(month))
   }
 
   handleYearClick(event: React.MouseEvent): void {

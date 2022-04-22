@@ -5,6 +5,7 @@ import {
   CalendarMonthData,
   CalendarOperations,
   CalendarState,
+  InterCalData,
 } from '../../models/types';
 import { InterCalDay } from './InterCalDay';
 import { ForwardBackward } from './ForwardBackward';
@@ -19,16 +20,15 @@ interface CalendarMonthProps {
 }
 
 export class CalendarMonth extends React.Component<CalendarMonthProps> {
-
-
   render(): JSX.Element {
     let html = this.getDayArray();
     let className = `CalendarMonth ${this.props.active ? "active" : ""}`
+    let header = `${this.props.data.name} ${this.props.data.year}`
     return (
-      <div className={className} onClick={this.props.onClick} data-month={this.props.data.number}>
+      <div className={className} onClick={this.props.onClick} onDoubleClick={this.handleMonthDoubleClick.bind(this)} data-month={this.props.data.number}>
         <header>
           {this.props.mode === "month" 
-          ? <ForwardBackward text={this.props.data.name} onForward={this.handleMonthClick.bind(this)} onBackward={this.handleMonthClick.bind(this)}></ForwardBackward>
+          ? <ForwardBackward text={header} onForward={this.handleMonthClick.bind(this)} onBackward={this.handleMonthClick.bind(this)}></ForwardBackward>
           : <h3>{this.props.data.name}</h3>
         
           }
@@ -43,11 +43,18 @@ export class CalendarMonth extends React.Component<CalendarMonthProps> {
             )
           )}
         </div>
-        {this.props.data.intercal && 
-        <InterCalDay onClick={this.props.operations.changeDay.bind(this)} parent={this.props.data} state={this.props.state} data={this.props.data.intercal}></InterCalDay>
-        }
+        {this.getInterCalElement()}
       </div>
     );
+  }
+
+  getInterCalElement() : JSX.Element {
+    return this.props.data.intercal.reduce((prev : JSX.Element, current : InterCalData) => {
+      return <>
+      {prev}
+      <InterCalDay onClick={this.props.operations.setDay.bind(this)} parent={this.props.data} state={this.props.state} data={current}></InterCalDay>
+      </>
+    }, <></>)
   }
 
 
@@ -77,15 +84,20 @@ export class CalendarMonth extends React.Component<CalendarMonthProps> {
         }
 
         let notes = this.props.data.notes[dayInMonth]
-        dayArray.push(
-          <CalendarDay
-            onClick={this.props.operations.changeDay.bind(this)}
-            key={dayInMonth}
-            notes={notes}
-            day={dayInMonth}
-            active={activeDay}
-          ></CalendarDay>
-        ); // Have to do this to get unique keys
+
+        if (!this.props.data.intercal.find(i => i.date.day === dayInMonth))
+        {
+          dayArray.push(
+            <CalendarDay
+              onClick={this.props.mode === "month" ? this.props.operations.setDay.bind(this) : (() => {})}
+              key={dayInMonth}
+              notes={notes}
+              day={dayInMonth}
+              active={this.props.mode === "month" ? activeDay : false}
+            ></CalendarDay>
+          ); // Have to do this to get unique keys
+        }
+
       }
 
       html.push(
@@ -95,7 +107,7 @@ export class CalendarMonth extends React.Component<CalendarMonthProps> {
               {prev}
               {current}
             </>
-          ))}
+          ), <></>)}
         </div>
       );
     }
@@ -106,5 +118,10 @@ export class CalendarMonth extends React.Component<CalendarMonthProps> {
   handleMonthClick(event: React.MouseEvent): void {
     let direction = event.currentTarget.getAttribute('data-type');
     this.props.operations.changeMonth(direction === "forward" ? 1 : -1);
+  }
+
+  handleMonthDoubleClick(event : React.MouseEvent) : void {
+    if (this.props.mode === "year")
+      this.props.operations.switchViewTo("month")
   }
 }

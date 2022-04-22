@@ -14,10 +14,10 @@ export class InterCalDay extends React.Component<InterCalProps> {
 
     let day = <CalendarDay
             onClick={this.props.onClick.bind(this)}
-            key={this.props.parent.daysInMonth + 1}
-            day={this.props.parent.daysInMonth + 1}
-            active={this.props.state.month === this.props.parent.number && this.props.state.day === this.props.parent.daysInMonth + 1}
-            notes={[]}
+            key={this.props.parent.daysInMonth}
+            day={this.props.parent.daysInMonth}
+            active={this.props.state.month === this.props.parent.number && this.props.state.day === this.props.parent.daysInMonth}
+            notes={this.props.parent.notes[this.props.state.day]}
           ></CalendarDay>
 
     return (

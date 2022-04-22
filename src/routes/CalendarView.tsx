@@ -25,6 +25,15 @@ class CalendarView extends React.Component<CalendarViewProps, CalendarState> {
       return <div></div>;
     }
     let calendarData = this.controller.getCalendarData();
+    let operations = {
+        changeDay: this.changeDay.bind(this),
+        changeMonth: this.changeMonth.bind(this),
+        changeYear: this.changeYear.bind(this),
+        setDay: this.setDay.bind(this),
+        setMonth: this.setMonth.bind(this),
+        setYear: this.setYear.bind(this),
+        switchViewTo : this.switchViewTo.bind(this)
+      }
     return (
       <div className="CalendarView">
         <div className="Calendar">
@@ -37,19 +46,14 @@ class CalendarView extends React.Component<CalendarViewProps, CalendarState> {
               data={this.controller.getCurrentMonthData()}
               state={this.state}
               mode={'month'}
-              operations={{
-                changeDay: this.changeDay.bind(this),
-                changeMonth: this.changeMonth.bind(this),
-              }}
+              operations={operations}
             ></CalendarMonth>
           ) : (
             <CalendarYear
               data={calendarData}
               state={this.state}
               getMonthData={this.controller.getMonthData.bind(this.controller)}
-              operations={{
-                changeYear : this.changeYear.bind(this)
-              }}
+              operations={operations}
             ></CalendarYear>
           )}
         </div>
@@ -60,17 +64,32 @@ class CalendarView extends React.Component<CalendarViewProps, CalendarState> {
 
   async changeDay (day: number) {
     // Extract this into generic controller?
+    this.setState(await this.controller.changeDateBy({ day }));
+  };
+
+  async changeMonth (month: number) {
+    this.setState(await this.controller.changeDateBy({ month }));
+  };
+
+
+  async changeYear (year: number) {
+    this.setState(await this.controller.changeDateBy({ year }));
+  };
+
+  async setDay (day: number) {
+    // Extract this into generic controller?
     this.setState(await this.controller.setDate({ day }));
   };
 
-  async changeMonth (number: number) {
-    this.setState(await this.controller.changeDateBy({ month: number }));
+  async setMonth (month: number) {
+    this.setState(await this.controller.setDate({ month }));
   };
 
 
-  async changeYear (number: number) {
-    this.setState(await this.controller.changeDateBy({ year: number }));
+  async setYear (year: number) {
+    this.setState(await this.controller.setDate({ year }));
   };
+
 
 
   switchViewTo(view: string) {

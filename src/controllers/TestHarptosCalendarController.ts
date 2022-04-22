@@ -26,11 +26,11 @@ export class TestHarptosCalendar extends AbstractCalendarController {
             calendar: {
               name: 'Calendar of Harptos',
               intercal: [
-                { name: 'Midwinter', month: 1 },
-                { name: 'Greengrass', month: 4 },
-                { name: 'Shieldmeet', month: 7, leap: true },
-                { name: 'Highharvestide', month: 9 },
-                { name: 'Feast of the Moon', month: 11 },
+                { name: 'Midwinter', date : {month: 1, day: 31} },
+                { name: 'Greengrass', date : {month: 4, day: 31} },
+                { name: 'Shieldmeet', date : {month: 7, day: 31}, leap: true },
+                { name: 'Highharvestide', date : {month: 9, day: 31} },
+                { name: 'Feast of the Moon', date : {month: 11, day: 31} },
               ],
               monthNames: [
                 '',
@@ -49,10 +49,10 @@ export class TestHarptosCalendar extends AbstractCalendarController {
               ],
               monthsInYear: 12,
               daysInYear: 365,
-              daysInMonth: [0, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30],
+              daysInMonth: [0, 31, 30, 30, 31, 30, 30, 31, 30, 31, 30, 31, 30],
               daysInWeek: 10,
               leapYear: {
-                month: 7,
+                date : {day: 31, month: 7},
                 recurrence: 4,
               },
             },
@@ -102,7 +102,7 @@ export class TestHarptosCalendar extends AbstractCalendarController {
 
   getCalendarData(): CalendarData {
     if (this.model) {
-      return this.model.data;
+      return {calendar : this.model.definition, state : this.model.state};
     } else throw Error('No Calendar Model');
   }
 
@@ -115,11 +115,12 @@ export class TestHarptosCalendar extends AbstractCalendarController {
   getMonthData(month: number, year : number): CalendarMonthData {
     if (this.model) {
       return {
-        daysInMonth: this.model.data.calendar.daysInMonth[month],
-        daysInWeek: this.model.data.calendar.daysInWeek,
-        name: this.model.data.calendar.monthNames[month],
+        daysInMonth: this.model.daysInMonth(month, year),
+        daysInWeek: this.model.daysInWeek,
+        name: this.model.monthNames[month],
+        year,
         number: month,
-        intercal: this.getIntercalData(month, year) || undefined,
+        intercal: this.getIntercalData(month, year),
         notes: this.getMonthNotes(month, year),
       };
     } else throw Error('No Calendar Model');
@@ -156,35 +157,34 @@ export class TestHarptosCalendar extends AbstractCalendarController {
     return monthNotes;
   }
 
-  getIntercalData(month: number, year: number): InterCalData | void {
+  getIntercalData(month: number, year: number): InterCalData[] {
     if (this.model) {
-      let intercal = this.model.data.calendar.intercal.find(
-        (i) => month === i.month
-      );
-      if (intercal) return intercal;
+      return this.model.intercalInMonth(month, year);
     }
+    else 
+      throw new Error("No Calendar Model")
   }
 
   checkStateChange(): void {
     if (this.model) {
       let state = this.model.state;
-      let data = this.model.data;
+      let definition = this.model.definition;
 
-      if (state.day > data.calendar.daysInMonth[state.month]) {
+      if (state.day > this.model.daysInMonth(state.month, state.year)) {
         state.month++;
         state.day = 1;
       }
 
       if (state.day <= 0) {
         state.month--;
-        state.day = data.calendar.daysInMonth[state.month];
+        state.day = this.model.daysInMonth(state.month, state.year);
       }
 
-      if (state.month > data.calendar.monthsInYear) {
+      if (state.month > definition.monthsInYear) {
         state.month = 1;
         state.year++;
       } else if (state.month <= 0) {
-        state.month = data.calendar.monthsInYear;
+        state.month = definition.monthsInYear;
         state.year--;
       }
     }
