@@ -16,5 +16,16 @@ export abstract class AbstractCalendarController {
     abstract changeDateBy(date : Date) : CalendarState 
     abstract getIntercalData(month: number, year : number) : InterCalData[] | void
     abstract getCampaignData() : CampaignData
+    setStateToCurrentDate() : CalendarState {
+        let state = this.getCalendarState()
+        if (this.campaignData?.active)
+        {
+            state =  this.setDate(this.campaignData?.active?.Date)
+            state.viewMode = "month"
+            return state
+        }
+        else 
+            return state
+    }
 
 }

@@ -13,7 +13,7 @@ export interface CalendarState {
   year: number;
   date?: string;
   viewMode?: string;
-  notes : {"month" : Note[], "day" : Note[]}
+  notes : {"month" : {[key: number] : Note[]}, "day" : {[key: number] : Note[]}, title : {month: string, day : string}}
 }
 
 export interface CalendarData {
@@ -72,11 +72,12 @@ export interface CampaignData {
   //   // year             // month       //day
   //   [key: number] : {[key : number] : {[key : number] : Note[]}} 
   // }
-  notes : Note[];
+  notes :  Note[]
   campaigns :   {
     [key: string] : Campaign
   }
   active? : Campaign
+  date? : string
 }
 
 

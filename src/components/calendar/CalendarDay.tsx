@@ -25,7 +25,7 @@ export class CalendarDay extends React.Component<CalendarDayProps> {
             {this.props.notes
               .map((n) => {
                 let markerClass = n.active ? "marker active" : "marker"  
-                let opacity = 1 - ((Math.abs(n.distance || 0))/ 5)
+                let opacity = 1 - ((Math.abs(n.distance || 0))/ 4)
                 if (opacity <= 0)
                   return undefined
                 let icon = faCircle;

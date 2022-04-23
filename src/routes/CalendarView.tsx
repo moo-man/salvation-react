@@ -58,7 +58,7 @@ class CalendarView extends React.Component<CalendarViewProps, CalendarState> {
             ></CalendarYear>
           )}
         </div>
-        <Campaign calendar={this.state} campaign={this.controller.getCampaignData()}></Campaign>
+        <Campaign calendar={this.state} campaign={this.controller.getCampaignData()} goToCurrentDate={this.setStateToCurrentDate.bind(this)}></Campaign>
       </div>
     );
   }
@@ -92,6 +92,10 @@ class CalendarView extends React.Component<CalendarViewProps, CalendarState> {
   };
 
 
+  async setStateToCurrentDate()
+  {
+    this.setState(this.controller.setStateToCurrentDate())
+  }
 
   switchViewTo(view: string) {
     this.setState({ viewMode: view });

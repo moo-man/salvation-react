@@ -12,6 +12,7 @@ export class NoteData {
 export class Note {
     active? : boolean;
     distance? : number = 0;
+    Day : string = "";
 
     constructor(public data : NoteData){}
 

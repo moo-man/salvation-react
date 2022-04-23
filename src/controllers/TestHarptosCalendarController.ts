@@ -58,13 +58,14 @@ export class TestHarptosCalendar extends AbstractCalendarController {
               },
             },
             state: {
-              day: 1,
-              month: 1,
-              year: 1490,
+              day: this.campaignData?.active?.Date.day || 1,
+              month: this.campaignData?.active?.Date.month || 1,
+              year: this.campaignData?.active?.Date.year || 1490,
               date: ``,
               notes : {
-                month : [],
-                day : []
+                month : this.currentMonthNotes(),
+                day : this.currentDayNotes(),
+                title : this.formatNoteTitle()
               }
             },
           });
@@ -80,10 +81,11 @@ export class TestHarptosCalendar extends AbstractCalendarController {
       this.model.state.month = date.month || this.model.state.month;
       this.model.state.year = date.year || this.model.state.year;
 
-      this.model.state.date = `${this.model.state.day} ${this.model.state.month} ${this.model.state.year}`;
+      this.model.state.date = this.formatDate({day : this.model.state.day, month : this.model.state.month, year : this.model.state.year})
 
       this.model.state.notes.month = this.currentMonthNotes()
       this.model.state.notes.day = this.currentDayNotes()
+      this.model.state.notes.title = this.formatNoteTitle()
 
       return this.model.state;
     } else throw Error('No Calendar Model');
@@ -95,16 +97,56 @@ export class TestHarptosCalendar extends AbstractCalendarController {
       this.model.state.month += date.month || 0;
       this.model.state.year += date.year || 0;
 
-      this.model.state.date = `${this.model.state.day} ${this.model.state.month} ${this.model.state.year}`;
+      this.model.state.date = this.formatDate({day : this.model.state.day, month : this.model.state.month, year : this.model.state.year})
       
       this.checkStateChange();
 
       this.model.state.notes.month = this.currentMonthNotes()
       this.model.state.notes.day = this.currentDayNotes()
+      this.model.state.notes.title = this.formatNoteTitle()
+
 
       return this.model.state;
     } else throw Error('No Calendar Model');
   }
+
+  formatNoteTitle() : {month : string, day : string}
+  {
+    if (this.model)
+    {
+      
+      return {
+        "month" : "Notes for " + this.formatDate({month : this.model.state.month, year : this.model.state.year}),
+        "day" : "Notes for " + this.formatDate({day : this.model.state.day, month : this.model.state.month, year : this.model.state.year}) 
+      }
+    }
+    else return {
+      "month" : "Notes",
+      "day" : "Notes"
+    }
+  }
+
+  formatDate(date : Date) : string
+  {
+    let day = ""
+
+    if (date.day?.toString().split("").pop() === "1" && date.day !== 11)
+    {
+      day = `${date.day}st`
+    }
+    else if (date.day?.toString().split("").pop() === "2" && date.day !== 12)
+    {
+      day = `${date.day}nd`
+    }
+    else if (date.day?.toString().split("").pop() === "3" && date.day !== 13)
+    {
+      day = `${date.day}rd`
+    }
+    else if(date.day) day = `${date.day}th`
+    
+    return `${day} ${date.month ? this.model?.monthNames[date.month] : ""} ${date.year ? date.year : ""}`.trim()
+
+  } 
 
   getCalendarState(): CalendarState {
     if (this.model) return this.model.state;
@@ -139,15 +181,14 @@ export class TestHarptosCalendar extends AbstractCalendarController {
         year,
         number: month,
         intercal: this.getIntercalData(month, year),
-        notes: this.getMonthNotes(month)
-        .map(n => {
+        notes: this.getMonthNotes(month).map(n => {
           n.setDistance(year)
           return n
         })
       };
     } else throw Error('No Calendar Model');
   }
-  getMonthNotes(month: number, year? : number):  Note[] {
+  getMonthNotes(month: number, year? : number): Note[] {
     return this.notesAtDate({month, year})
   }
 
@@ -191,15 +232,15 @@ export class TestHarptosCalendar extends AbstractCalendarController {
       campaigns: {},
     };
     for (let campaign of data.CampaignList) {
-      let campaignObj : Campaign = {
-      name: campaign.Name,
+      let campaignObj = {
+      name: campaign.Name as string,
       currentDate: TestHarptosCalendar.convertStringDate(
         campaign.CurrentDate
         ),
-        tag: campaign.Tag,
+        tag: campaign.Tag as string,
       };
-      this.campaignData.campaigns[campaign.Tag] = campaignObj
-      
+      this.campaignData.campaigns[campaign.Tag] = new Campaign(campaignObj)
+
       campaign.notes[0].start = true;
       campaign.notes[campaign.notes.length-1].end = true;
 
@@ -209,7 +250,7 @@ export class TestHarptosCalendar extends AbstractCalendarController {
           content: note.NoteContent as string,
           date,
           importance: parseInt(note.Importance),
-          campaign : campaignObj,
+          campaign : this.campaignData.campaigns[campaign.Tag],
           type: NoteType.Normal
         };
 
@@ -231,6 +272,7 @@ export class TestHarptosCalendar extends AbstractCalendarController {
     if (this.campaignData) {
       this.campaignData.active = this.campaignData.campaigns[campaignTag];
       this.campaignData.notes.forEach(n => n.active = n.campaign?.tag === campaignTag)
+      this.campaignData.date = this.formatDate(this.campaignData.active.Date)
     }
   }
 
@@ -239,23 +281,24 @@ export class TestHarptosCalendar extends AbstractCalendarController {
     return `${dateSplit[0]}${dateSplit[1]},${dateSplit[2]}${dateSplit[3]},${dateSplit[4]}${dateSplit[5]}${dateSplit[6]}${dateSplit[7]}`;
   }
 
-  currentMonthNotes() : Note[]
+  currentMonthNotes() : {[key: number] : Note[]}
   {
     if (this.model)
     {
-      return this.notesAtDate({month : this.model.state.month})
+      return this.organizeNotes(this.notesAtDate({month : this.model.state.month}))
     }
     else return []
   }
 
-  currentDayNotes() : Note[]
+  currentDayNotes() : {[key: number] : Note[]}
   {
     if (this.model)
     {
-      return this.notesAtDate({month : this.model.state.month, day: this.model.state.day})
+      return this.organizeNotes(this.notesAtDate({month : this.model.state.month, day: this.model.state.day}))
     }
     else return []
   }
+
 
   static dateSorter(a : Date, b : Date) : number {
     if (a.year && b.year)
@@ -280,7 +323,25 @@ export class TestHarptosCalendar extends AbstractCalendarController {
     return 0
   }
 
-  notesAtDate(date : Date): Note[] {
+  
+  organizeNotes(notes : Note[]) : {[key: number] : Note[]}
+  {
+    let organized : {[key: number] : Note[]} = {}
+    if (!this.model)
+      return []
+    for (let note of notes)
+    {
+      note.setDistance(this.model?.state.year);
+      note.Day = (this.formatDate({day : note.Date.day}))
+      if (!organized[note.distance!])
+        organized[note.distance!] = []
+
+      organized[note.distance!].push(note);
+    }
+    return organized
+  }
+
+  notesAtDate(date : Date):  Note[] {
     let notes : Note[] = this.campaignData?.notes || []
 
     if (date.year)
@@ -299,81 +360,8 @@ export class TestHarptosCalendar extends AbstractCalendarController {
     }
 
     return notes.sort((a, b) => {
-      return TestHarptosCalendar.dateSorter(a.Date, b.Date)
+      return TestHarptosCalendar.dateSorter(b.Date, a.Date)
     })
-
-//     if(this.campaignData)
-//     {
-//       let results : {[key: string] : any} = this.campaignData?.notes
-
-//       if (date.year)
-//       {
-//         results = this.campaignData.notes[date.year] || {}
-//       }
-
-//       // If no year specified, consolidate year notes into month notes
-//       else if (!date.year)
-//       {
-//         for (let year in this.campaignData.notes)
-//         {
-//           for (let month in this.campaignData.notes[year])
-//           {
-//             if (!results[month])
-//               results[month] = {}
-
-//             for(let day in this.campaignData.notes[year][month])
-//             {
-//               let notesAtDay = this.campaignData.notes[year][month][day]
-//               if (!results[month][day] && notesAtDay)
-//                 results[month][day] = {}
-
-//               if(notesAtDay)
-//                 results = results.concat(this.campaignData.notes[month][day])
-//             }
-// }
-
-//         }
-//       }
-
-//       if (date.month)
-//       {
-//         results = results[date.month]
-//       }
-
-//       else if (date.day)
-//       {
-//         results = results[date.day]
-//       }
-
-//       notes = notes.concat(Object.values(results))
-    //   if (date.year)
-    //   {
-    //     for (let d in this.campaignData.notes || {})
-    //     {
-    //       if (Number(d.split(",")[2]) === date.year)
-    //       {
-    //         notes = notes.concat(this.campaignData.notes[d])
-    //       }
-    //     }
-    //   }
-
-    //   if (date.month) 
-    //   {
-    //     if (notes.length)
-    //     {
-    //       notes = notes.filter(n => n.Date.month === date.month)
-    //     }
-    //   }
-
-    //   if (date.day)
-    //   {
-    //     if (notes.length)
-    //     {
-    //       notes = notes.filter(n => n.Date.day === date.day)
-    //     }
-    //   }
-
-    // }
   }
 
 }
