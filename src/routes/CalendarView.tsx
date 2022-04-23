@@ -7,6 +7,7 @@ import { CalendarMonth } from '../components/calendar/CalendarMonth';
 import { CalendarYear } from '../components/calendar/CalendarYear';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarDay } from '@fortawesome/free-solid-svg-icons';
+import { Campaign } from '../components/campaign/Campaign';
 
 interface CalendarViewProps {
   controller: AbstractCalendarController;
@@ -57,7 +58,7 @@ class CalendarView extends React.Component<CalendarViewProps, CalendarState> {
             ></CalendarYear>
           )}
         </div>
-        <div className="Campaign"></div>
+        <Campaign calendar={this.state} campaign={this.controller.getCampaignData()}></Campaign>
       </div>
     );
   }

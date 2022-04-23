@@ -17,7 +17,7 @@ export class InterCalDay extends React.Component<InterCalProps> {
             key={this.props.parent.daysInMonth}
             day={this.props.parent.daysInMonth}
             active={this.props.state.month === this.props.parent.number && this.props.state.day === this.props.parent.daysInMonth}
-            notes={this.props.parent.notes[this.props.state.day]}
+            notes={this.props.parent.notes.filter(n => n.Date.day === this.props.parent.daysInMonth)}
           ></CalendarDay>
 
     return (

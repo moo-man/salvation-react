@@ -13,6 +13,7 @@ export interface CalendarState {
   year: number;
   date?: string;
   viewMode?: string;
+  notes : {"month" : Note[], "day" : Note[]}
 }
 
 export interface CalendarData {
@@ -47,7 +48,7 @@ export interface CalendarMonthData {
   daysInMonth: number;
   daysInWeek: number;
   intercal: InterCalData[];
-  notes : {[key: string] : Note[]}
+  notes : Note[]
 }
 
 
@@ -67,12 +68,15 @@ export enum NoteType {Normal, Start, Stop}
 
 
 export interface CampaignData {
-  notes : {
-    [key: string] : Note[]
-  }
+  // notes : {
+  //   // year             // month       //day
+  //   [key: number] : {[key : number] : {[key : number] : Note[]}} 
+  // }
+  notes : Note[];
   campaigns :   {
     [key: string] : Campaign
   }
   active? : Campaign
 }
+
 

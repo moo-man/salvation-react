@@ -1,9 +1,12 @@
-import { CalendarData, CalendarMonthData, CalendarState, Date, InterCalData } from "../models/types";
+import { CalendarData, CalendarMonthData, CalendarState, CampaignData, Date, InterCalData } from "../models/types";
 import { AbstractCalendarController } from "./AbstractCalendarController";
 
 
 export class APICalendarController extends AbstractCalendarController
 {
+    getCampaignData(): CampaignData {
+        throw new Error("Method not implemented.");
+    }
     getIntercalData(month: number, year : number): InterCalData[] {
         throw new Error("Method not implemented.");
     }

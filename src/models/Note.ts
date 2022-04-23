@@ -1,12 +1,41 @@
-import { Importance, NoteType } from "./types"
+import { Campaign } from "./Campaign";
+import { Importance, NoteType, Date } from "./types"
 
-export class Note {
+export class NoteData {
     content = "";
     importance : Importance = Importance.None;
     date = ""
-    campaign : string | undefined = undefined
-    active? : boolean
+    campaign : Campaign | null = null
     type: NoteType = NoteType.Normal
-    distance? : number = 0
+}
+
+export class Note {
+    active? : boolean;
+    distance? : number = 0;
+
+    constructor(public data : NoteData){}
+
+    get type() {
+        return this.data.type
+    }
+
+    get campaign() {
+        return this.data.campaign
+    }
+    get Date() : Date {
+        let [month, day, year] = this.data.date.split(",").map(i => Number(i))
+        return {
+            month,
+            day,
+            year
+        }
+    }
+
+    setDistance(year : number)
+    {
+        if (this.Date.year)
+            this.distance = year - this.Date.year
+        
+    }
 }
 

@@ -83,7 +83,7 @@ export class CalendarMonth extends React.Component<CalendarMonthProps> {
           activeDay = true;
         }
 
-        let notes = this.props.data.notes[dayInMonth]
+        let notes = this.props.data.notes.filter(n => n.Date.day === dayInMonth)
 
         if (!this.props.data.intercal.find(i => i.date.day === dayInMonth))
         {
