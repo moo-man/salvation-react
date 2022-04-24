@@ -15,6 +15,7 @@ import { AbstractCalendarController } from './AbstractCalendarController';
 export class TestHarptosCalendar extends AbstractCalendarController {
   protected model: Calendar | null = null;
   protected campaignData: CampaignData | null = null;
+  protected years: string[] = []
 
   async fetchData(): Promise<void> {
     return new Promise((resolve) => {
@@ -66,12 +67,20 @@ export class TestHarptosCalendar extends AbstractCalendarController {
                 month : this.currentMonthNotes(),
                 day : this.currentDayNotes(),
                 title : this.formatNoteTitle()
-              }
+              },
+              yearName : ""
             },
           });
           this.dataLoaded = true;
           resolve();
         });
+
+      fetch("/years.txt")
+      .then(data => data.text())
+      .then(text => {
+        this.years = text.split("\n").map(i => i.split(":")[1].trim())
+        this.setYear()
+      })
     });
   }
 
@@ -86,6 +95,8 @@ export class TestHarptosCalendar extends AbstractCalendarController {
       this.model.state.notes.month = this.currentMonthNotes()
       this.model.state.notes.day = this.currentDayNotes()
       this.model.state.notes.title = this.formatNoteTitle()
+
+      this.setYear()
 
       return this.model.state;
     } else throw Error('No Calendar Model');
@@ -105,9 +116,19 @@ export class TestHarptosCalendar extends AbstractCalendarController {
       this.model.state.notes.day = this.currentDayNotes()
       this.model.state.notes.title = this.formatNoteTitle()
 
+      this.setYear()
+
+
 
       return this.model.state;
     } else throw Error('No Calendar Model');
+  }
+
+  setYear() {
+    if (this.model)
+    {
+      this.model.state.yearName = this.years[this.model.state.year]
+    }
   }
 
   formatNoteTitle() : {month : string, day : string}

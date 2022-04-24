@@ -1,0 +1,18 @@
+.Notes h3 {
+    text-align: center;
+}
+
+.Notes li {
+    width: 100%
+}
+
+.Notes {
+    height: 100%
+}
+
+.Notes .note-list {
+    height: calc(100% - 180px);
+    padding: 10px;
+    overflow: hidden;
+    overflow-y: auto;
+}

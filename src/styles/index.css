@@ -39,3 +39,9 @@ li {
 a {
   color: #42b983;
 }
+
+
+:root {
+  --color-red: #6a070a;
+  --color-yellow: #ddb96d;
+}

@@ -21,7 +21,7 @@ export abstract class AbstractCalendarController {
         if (this.campaignData?.active)
         {
             state =  this.setDate(this.campaignData?.active?.Date)
-            state.viewMode = "month"
+            //state.viewMode = "month"
             return state
         }
         else 

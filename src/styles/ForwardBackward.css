@@ -2,9 +2,19 @@
 .direction-controls {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
+    width: 100%
 }
 
 .direction-controls > *{
     margin: 5px
+}
+
+.direction-controls button {
+     flex: 0 0 30px 
+}
+
+.direction-controls h3 {    
+    flex: 0.2;
+    justify-content: center;
 }

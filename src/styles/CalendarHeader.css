@@ -1,3 +1,9 @@
 .CalendarHeader {
     text-align: center;
 }
+
+.CalendarHeader h2 {
+  font-family: "Cinzel Decorative";
+  color : var(--color-red);
+    font-size: 30px
+}

@@ -15,9 +15,9 @@ export class ForwardBackward extends React.Component<ForwardBackwardProps> {
   
   render(): JSX.Element {
     return <div className="direction-controls">
-      <button data-type="backward" onClick={this.props.onBackward}><FontAwesomeIcon icon={faChevronLeft} /></button>    
+      <button className="calendar-button" data-type="backward" onClick={this.props.onBackward}><FontAwesomeIcon icon={faChevronLeft} /></button>    
       <h3>{this.props.text}</h3>
-      <button data-type="forward" onClick={this.props.onForward}><FontAwesomeIcon icon={faChevronRight} /></button>
+      <button className="calendar-button" data-type="forward" onClick={this.props.onForward}><FontAwesomeIcon icon={faChevronRight} /></button>
     </div>
   }
 }

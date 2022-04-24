@@ -38,10 +38,10 @@ class CalendarView extends React.Component<CalendarViewProps, CalendarState> {
     return (
       <div className="CalendarView">
         <div className="Calendar">
-          <button onClick={this.toggleView.bind(this)}>
+          <button className="calendar-button" onClick={this.toggleView.bind(this)}>
             <FontAwesomeIcon icon={faCalendarDay} />
           </button>
-          <CalendarHeader name={calendarData.calendar.name}></CalendarHeader>
+          <CalendarHeader name={calendarData.calendar.name} year={calendarData.state.yearName}></CalendarHeader>
           {this.state.viewMode === 'month' ? (
             <CalendarMonth
               data={this.controller.getCurrentMonthData()}
@@ -95,6 +95,7 @@ class CalendarView extends React.Component<CalendarViewProps, CalendarState> {
   async setStateToCurrentDate()
   {
     this.setState(this.controller.setStateToCurrentDate())
+    this.switchViewTo("month")
   }
 
   switchViewTo(view: string) {

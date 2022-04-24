@@ -37,8 +37,8 @@
 }
 
 
-.CalendarYear .CalendarMonth.active  {
-    box-shadow: inset 0px 0px 10px #6a070a;
+.CalendarYear .CalendarMonth.active > header h3 {
+    color: var(--color-red);
 }
 
 .CalendarYear .CalendarMonth:hover  {

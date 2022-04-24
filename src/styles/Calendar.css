@@ -1,5 +1,7 @@
 .CalendarView {
     display: flex;
+    height: 100%;
+    overflow: hidden
 }
 
 .Calendar {
@@ -10,4 +12,21 @@
 
 .Campaign {
     flex : 1
+}
+
+button.calendar-button {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    border-color: var(--color-red);
+    text-align: center;
+    padding: 0px;
+    font-weight: bold;
+    background: rgba(255,255,255, 0.3);
+    /*background: linear-gradient(225deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 55%);*/
+    
+}
+
+button.calendar-button:hover {
+    cursor: pointer
 }

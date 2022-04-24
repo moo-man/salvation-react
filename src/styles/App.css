@@ -14,7 +14,7 @@
 .Salvation h2 {
   font-family: "Cinzel Decorative";
   font-size: 60px;
-  color: #6a070a;
+  color: var(--color-red)
 }
 
 .Salvation img {

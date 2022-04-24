@@ -13,6 +13,7 @@ export interface CalendarState {
   year: number;
   date?: string;
   viewMode?: string;
+  yearName : string
   notes : {"month" : {[key: number] : Note[]}, "day" : {[key: number] : Note[]}, title : {month: string, day : string}}
 }
 

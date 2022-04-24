@@ -1,37 +1,49 @@
-import React from "react";
-import { Note } from "../../models/Note";
+import React from 'react';
+import { Note } from '../../models/Note';
+import '../../styles/Notes.css';
 
 interface NoteDisplayProps {
-  notes : {[key: number] : Note[]}
-  mode : string
-  title : string
+  notes: { [key: number]: Note[] };
+  mode: string;
+  title: string;
 }
 
 export class NoteDisplay extends React.Component<NoteDisplayProps> {
   render() {
+    let noteSections = [];
 
-    let noteSections = []
+    for (let section in this.props.notes) {
+      let title: string;
+      if (Number(section) < 0) title = `in ${Math.abs(Number(section))} years...`;
+      else if (Number(section) > 0) title = `${section} years ago...`;
+      else title = this.props.mode === 'day' ? `On this day` : 'This month...';
 
-    for(let section in this.props.notes)
-    {
-      let title : string
-      if (Number(section) < 0)
-        title = `in ${section} years...`
-      else if (Number(section) > 0)
-        title = `${section} years ago...`
-      else 
-        title = this.props.mode === "day" ? `On this day` : "This month..."
-
-      noteSections.push(<h4>{title}</h4>)
-      noteSections.push(<ul>
-        {this.props.notes[section].reduce((prev, current : Note) => <>{prev}<li><b>{current.Day}</b>: ({current.campaign?.tag}) - {current.data.content}</li></>, <></>)}
-      </ul>)
-
+      noteSections.push(<h4>{title}</h4>);
+      noteSections.push(
+        <ul>
+          {this.props.notes[section].reduce(
+            (prev, current: Note) => (
+              <>
+                {prev}
+                <li>
+                  <b>{current.Day}</b>: ({current.campaign?.tag}) -{' '}
+                  {current.data.content}
+                </li>
+              </>
+            ),
+            <></>
+          )}
+        </ul>
+      );
     }
 
-    return <div className="Notes">
-      <h3>{this.props.title}</h3>
-      {noteSections}
-    </div>
+    return (
+      <div className="Notes">
+        <h3>{this.props.title}</h3>
+        <div className="note-list">
+        {noteSections}
+        </div>
+      </div>
+    );
   }
 }

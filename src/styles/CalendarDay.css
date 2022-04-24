@@ -29,6 +29,6 @@
 }
 
 .day .notes .marker.active {
-    color: #6a070a;
+  color: var(--color-red);
     opacity: 1
 }
